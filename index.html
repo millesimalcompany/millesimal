@@ -677,7 +677,7 @@ footer{border-top:1px solid var(--line-soft);padding-top:clamp(44px,5vw,70px);pa
       <div class="form-card rise" data-d="1">
         <h3>Send one meeting in</h3>
         <p class="hint">Tell us roughly what happened. We reply with exactly what evidence we need and what it costs.</p>
-        <form id="ruling-form" action="https://formspree.io/f/xaeybqql" method="POST" novalidate>
+        <form id="ruling-form" action="https://formspree.io/f/xaeybbql" method="POST" novalidate>
           <input type="hidden" name="_subject" value="Millesimal — request for a ruling">
           <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="field">
@@ -959,7 +959,9 @@ function legacy(text,done){
         }
       })
       .catch(function(err){
-        say(form,'error', err.message + ' Email millesimalcompany@gmail.com and it will be picked up.');
+        var m = String(err.message || 'That did not send.').trim();
+        if (!/[.!?]$/.test(m)) { m += '.'; }
+        say(form,'error', m + ' Email millesimalcompany@gmail.com and it will be picked up.');
         if (btn){ btn.disabled = false; btn.innerHTML = label; }
       });
   });
