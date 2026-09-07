@@ -114,6 +114,10 @@ body{
 .shell{max-width:var(--max);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
 .band-bone{background:var(--bone);color:var(--b1)}
 .pad-y{padding-top:clamp(66px,9vw,136px);padding-bottom:clamp(66px,9vw,136px)}
+/* Where two sections share the same ground there is no colour
+   change to justify two full paddings — the gap just reads as
+   something failing to load. One pad between them, not two. */
+#checks,#ruling{padding-top:clamp(40px,5vw,78px)}
 a{color:inherit;text-decoration:none}
 :focus-visible{outline:2px solid var(--judge);outline-offset:3px}
 img{max-width:100%}
@@ -177,35 +181,43 @@ h3{font-size:clamp(22px,2.5vw,32px);font-weight:500;letter-spacing:-.03em;line-h
              background-position .62s var(--ease),filter .18s var(--ease);
 }
 
-/* primary — gradient face, light sweep layered over it.
-   Two background layers rather than a pseudo-element, so the
-   sweep can never sit on top of the label. */
+/* primary — the light follows the pointer.
+   The highlight is a background layer, not a pseudo-element, so
+   it can never sit on top of the label. @property lets the
+   alpha animate rather than snap. */
+@property --glow{syntax:'<number>';initial-value:0;inherits:false}
+
 .btn-primary{
+  --mx:50%; --my:50%; --glow:0;
   color:var(--cta-ink);
   background-image:
-    linear-gradient(105deg,transparent 34%,rgba(255,255,255,.42) 50%,transparent 66%),
+    radial-gradient(220px circle at var(--mx) var(--my),
+      rgba(255,255,255,calc(var(--glow) * .55)) 0%,
+      rgba(255,255,255,calc(var(--glow) * .18)) 38%,
+      transparent 68%),
     var(--grad);
-  background-size:230% 100%,100% 100%;
-  background-position:145% 0,0 0;
-  background-repeat:no-repeat;
   box-shadow:0 0 0 0 rgba(255,90,0,0);
+  transition:transform .18s var(--ease),box-shadow .24s var(--ease),
+             --glow .28s var(--ease),filter .18s var(--ease);
 }
 @media (hover:hover){
   .btn-primary:hover{
+    --glow:1;
     transform:translateY(-2px);
-    background-position:-60% 0,0 0;
-    box-shadow:0 10px 34px -8px rgba(255,90,0,.62),0 0 0 1px rgba(255,161,0,.34);
-    filter:brightness(1.05);
+    box-shadow:0 12px 38px -8px rgba(255,90,0,.68),0 0 0 1px rgba(255,161,0,.38);
+    filter:brightness(1.04);
   }
 }
 .btn-primary:focus-visible{
-  box-shadow:0 10px 34px -8px rgba(255,90,0,.62),0 0 0 1px rgba(255,161,0,.34);
+  --glow:1;
+  outline:none;
   transform:translateY(-2px);
+  box-shadow:0 12px 38px -8px rgba(255,90,0,.68),0 0 0 2px var(--ink),0 0 0 4px rgba(255,161,0,.9);
 }
 .btn-primary:active{
   transform:translateY(0) scale(.986);
   box-shadow:0 3px 14px -6px rgba(255,90,0,.55);
-  filter:brightness(.97);
+  filter:brightness(.96);
   transition-duration:.07s;
 }
 
@@ -227,14 +239,16 @@ h3{font-size:clamp(22px,2.5vw,32px);font-weight:500;letter-spacing:-.03em;line-h
 
 /* nav — lightest weight of the same idea */
 @media (hover:hover){
-  .nav-btn:hover{
+  /* :not(.nav-cta) matters — the CTA carries both classes, and a
+     flat background here would wipe out its gradient. */
+  .nav-btn:not(.nav-cta):hover{
     border-color:rgba(255,122,26,.42);
     background:rgba(255,122,26,.07);
     box-shadow:0 4px 18px -10px rgba(255,90,0,.6);
   }
   .nav-cta:hover{
-    filter:brightness(1.06);
-    box-shadow:0 6px 22px -8px rgba(255,90,0,.6);
+    filter:brightness(1.07);
+    box-shadow:0 6px 24px -8px rgba(255,90,0,.7),0 0 0 1px rgba(255,161,0,.4);
   }
 }
 .nav-btn{transition:border-color .18s var(--ease),background .18s var(--ease),box-shadow .22s var(--ease),transform .12s var(--ease)}
@@ -290,6 +304,63 @@ h3{font-size:clamp(22px,2.5vw,32px);font-weight:500;letter-spacing:-.03em;line-h
 @media (hover:hover){
   .foot-list a:hover{color:var(--judge);text-shadow:0 0 18px rgba(255,122,26,.55)}
   .card:hover .go{text-shadow:0 0 16px rgba(255,122,26,.5)}
+}
+
+/* ══ ORIENTATION ═══════════════════════════════════════════
+   A long single page needs to tell you where you are. A
+   progress rule under the nav, and the current section lit.
+   ═════════════════════════════════════════════════════════ */
+.nav::after{
+  content:"";position:absolute;left:0;bottom:-1px;height:2px;width:100%;
+  background:var(--grad);transform-origin:0 50%;
+  transform:scaleX(var(--read,0));
+  box-shadow:0 0 14px rgba(255,90,0,.55);
+  will-change:transform;
+}
+.nav-btn[data-active="true"]{
+  border-color:rgba(255,122,26,.5);
+  color:var(--judge);
+  background:rgba(255,122,26,.09);
+}
+
+/* ══ DETAIL ════════════════════════════════════════════════ */
+::selection{background:rgba(255,90,0,.34);color:#fff}
+html{scrollbar-color:rgba(244,241,235,.18) transparent;scrollbar-width:thin}
+::-webkit-scrollbar{width:12px;height:12px}
+::-webkit-scrollbar-track{background:var(--ink)}
+::-webkit-scrollbar-thumb{background:rgba(244,241,235,.15);border:3.5px solid var(--ink);border-radius:99px}
+::-webkit-scrollbar-thumb:hover{background:rgba(255,122,26,.5)}
+
+/* branded focus ring — never a default outline */
+:focus-visible{outline:2px solid var(--judge);outline-offset:3px;border-radius:1px}
+.check:focus-visible{outline-offset:-2px}
+
+/* ══ MOBILE NAVIGATION ═════════════════════════════════════
+   Below 1120px the section links used to vanish entirely,
+   leaving no way to move around a 8,000px page. They now
+   become a scrollable strip on a second row, with the CTA
+   pinned beside the wordmark so the action is always one tap
+   away. The fade on the right edge signals there is more.
+   ═════════════════════════════════════════════════════════ */
+@media (max-width:1120px){
+  .nav-in{flex-wrap:wrap;column-gap:12px;row-gap:0;min-height:0;padding-top:2px}
+  .brand{margin-right:auto;padding:11px 0}
+  .nav-cta{order:1;flex:none}
+  .nav-set{
+    order:2;width:100%;
+    overflow-x:auto;overscroll-behavior-x:contain;
+    scrollbar-width:none;-ms-overflow-style:none;
+    padding:0 0 11px;gap:7px;
+    -webkit-mask-image:linear-gradient(90deg,#000 90%,transparent);
+            mask-image:linear-gradient(90deg,#000 90%,transparent);
+  }
+  .nav-set::-webkit-scrollbar{display:none}
+  .nav-hide{display:inline-flex}
+  html{scroll-padding-top:118px}
+}
+@media (max-width:420px){
+  .nav-cta{padding:11px 14px;font-size:11px}
+  .brand b{font-size:19px}
 }
 
 /* ── role tokens ──────────────────────────────────────────── */
@@ -439,20 +510,99 @@ h3{font-size:clamp(22px,2.5vw,32px);font-weight:500;letter-spacing:-.03em;line-h
 .excl{margin-top:clamp(30px,3.4vw,46px);max-width:62ch;color:var(--t2);font-size:16.5px}
 
 /* ── score ────────────────────────────────────────────────── */
-.score-card{border-top:1px solid var(--line-b);padding-top:20px}
-.score-top{display:flex;align-items:baseline;justify-content:space-between;gap:18px;flex-wrap:wrap}
-.score-num{font-size:clamp(52px,6.2vw,77px);font-weight:500;color:var(--orange-deep);line-height:1;letter-spacing:-.045em;font-variant-numeric:tabular-nums}
-.score-bar{height:8px;background:rgba(20,19,15,.1);margin:16px 0 13px;overflow:hidden}
-.score-bar i{display:block;height:100%;background:var(--grad);transition:width .45s var(--ease)}
 .score-note{color:var(--b3);font-size:16.5px}
-.calc{display:flex;flex-wrap:wrap;gap:13px;margin-top:26px}
-.calc label{display:block;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--b4);margin-bottom:7px}
-.calc input{width:128px;padding:11px 12px;border:1px solid var(--line-b);background:transparent;color:var(--b1);font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:15px}
+
+/* the hallmark — where the /1000 scale comes from */
+.hallmark{
+  display:grid;grid-template-columns:auto 1fr;gap:clamp(16px,2vw,24px);
+  margin-top:clamp(28px,3vw,40px);padding-top:clamp(24px,2.6vw,32px);
+  border-top:1px solid var(--line-b);
+}
+.hallmark p{font-size:15.5px;line-height:1.6;color:var(--b3)}
+.hallmark p b{color:var(--b1);font-weight:600}
+.hallmark-stamp{
+  width:74px;height:86px;flex:none;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  border-radius:5px 5px 34px 34px;
+  background:linear-gradient(160deg,#DCD8CF,#EFECE5);
+  box-shadow:inset 1px 1px 2px rgba(20,19,15,.34),inset -1px -1px 1px rgba(255,255,255,.9),0 1px 0 rgba(255,255,255,.6);
+}
+.hallmark-stamp b{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:19px;font-weight:500;color:var(--b2);letter-spacing:.02em}
+.hallmark-stamp span{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--b4)}
+@media (max-width:430px){ .hallmark{grid-template-columns:1fr} }
+
+/* the instrument */
+.gauge-card{border:1px solid var(--line-b);background:rgba(255,255,255,.42);padding:clamp(20px,2.4vw,28px)}
+.gauge-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.score-num{font-size:clamp(48px,5.6vw,70px);font-weight:500;color:var(--orange-deep);line-height:1;letter-spacing:-.045em;font-variant-numeric:tabular-nums}
+.score-num small{font-size:.28em;font-weight:500;letter-spacing:.02em;color:var(--b4);margin-left:4px}
+
+/* margin-top leaves room for the reference-band label, which
+   sits above the track. The track itself cannot clip, or that
+   label disappears — so the fill is clipped instead. */
+.gauge{margin-top:34px}
+.gauge-track{position:relative;height:14px;background:rgba(20,19,15,.09)}
+.gauge-track i{display:block;height:100%;background:var(--grad);transition:width .42s var(--ease);position:relative;z-index:1;max-width:100%}
+/* reference zone: where a healthy show rate alone would land you */
+.gauge-band{position:absolute;left:70%;width:10%;top:0;bottom:0;z-index:2;
+  background:repeating-linear-gradient(45deg,rgba(20,19,15,.22) 0 2px,transparent 2px 5px);
+  border-left:1px solid rgba(20,19,15,.4);border-right:1px solid rgba(20,19,15,.4)}
+.gauge-band em{position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--b4);white-space:nowrap;font-style:normal}
+.gauge-pin{position:absolute;top:-5px;bottom:-5px;width:2px;background:var(--b1);z-index:3;
+  transition:left .42s var(--ease);box-shadow:0 0 0 2px rgba(244,241,235,.9)}
+.gauge-scale{display:flex;justify-content:space-between;margin-top:9px;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:10px;letter-spacing:.1em;color:var(--b4)}
+@media (max-width:520px){ .gauge-band em{font-size:8.5px} }
+
+.verdict-line{margin-top:26px;padding:13px 15px;font-size:15.5px;line-height:1.55;color:var(--b2);
+  border-left:3px solid var(--orange-deep);background:rgba(201,59,0,.06);transition:border-color .3s var(--ease),background .3s var(--ease)}
+.verdict-line b{font-weight:600;color:var(--b1)}
+.verdict-line[data-band="exceptional"]{border-left-color:#1E7A4D;background:rgba(30,122,77,.08)}
+.verdict-line[data-band="strong"]{border-left-color:#3F7A2E;background:rgba(63,122,46,.08)}
+.verdict-line[data-band="typical"]{border-left-color:#8C6D3F;background:rgba(140,109,63,.09)}
+.verdict-line[data-band="weak"]{border-left-color:var(--orange-deep);background:rgba(201,59,0,.07)}
+.verdict-line[data-band="poor"]{border-left-color:#9B1C10;background:rgba(155,28,16,.09)}
+
+.gauge-controls{margin-top:24px;padding-top:22px;border-top:1px solid var(--line-b)}
+.ctl-label{display:block;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--b4);margin-bottom:11px}
+.slider-wrap{display:block}
+#calc-slider{-webkit-appearance:none;appearance:none;width:100%;height:4px;background:rgba(20,19,15,.16);outline:none;cursor:pointer}
+#calc-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:24px;height:24px;border-radius:50%;
+  background:var(--grad);border:2px solid var(--bone);cursor:grab;
+  box-shadow:0 2px 10px -2px rgba(201,59,0,.7);transition:transform .14s var(--ease),box-shadow .2s var(--ease)}
+#calc-slider::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:#E8590C;border:2px solid var(--bone);cursor:grab;box-shadow:0 2px 10px -2px rgba(201,59,0,.7)}
+#calc-slider:hover::-webkit-slider-thumb{transform:scale(1.12);box-shadow:0 3px 16px -2px rgba(201,59,0,.85)}
+#calc-slider:active::-webkit-slider-thumb{transform:scale(1.04);cursor:grabbing}
+#calc-slider:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 4px rgba(201,59,0,.32)}
+
+.calc{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.calc>div{flex:1 1 120px;min-width:0}
+.calc label{display:block;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--b4);margin-bottom:7px}
+.calc input{width:100%;padding:11px 12px;border:1px solid var(--line-b);background:var(--bone);color:var(--b1);font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:15px}
 .calc input:focus{border-color:var(--orange-deep);outline:none}
-.benefit{padding:17px 0;border-bottom:1px solid var(--line-b-soft)}
-.benefit:first-child{border-top:1px solid var(--line-b)}
-.benefit b{display:block;font-size:17.5px;font-weight:600;margin-bottom:4px}
-.benefit p{color:var(--b3);font-size:16px}
+
+.cost-out{margin-top:22px;padding:16px 17px;background:var(--b1);color:var(--bone)}
+.cost-out .eyebrow{color:rgba(244,241,235,.55);display:block;margin-bottom:9px}
+.cost-line{font-size:16.5px;line-height:1.5}
+.cost-line b{font-weight:600;font-variant-numeric:tabular-nums}
+.cost-line #costReal{color:#FF8A3D}
+.cost-line em{font-style:italic}
+.cost-note{margin-top:8px;font-size:13.5px;color:rgba(244,241,235,.6);font-family:"IBM Plex Mono",ui-monospace,monospace;letter-spacing:.02em}
+
+.benefits-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:clamp(46px,5vw,76px);border-top:1px solid var(--line-b)}
+.benefit{padding:22px clamp(14px,1.8vw,26px) 4px 0;border-right:1px solid var(--line-b-soft)}
+.benefit:last-child{border-right:0}
+.benefit:not(:first-child){padding-left:clamp(14px,1.8vw,26px)}
+.benefit b{display:block;font-size:17px;font-weight:600;margin-bottom:6px;letter-spacing:-.01em}
+.benefit p{color:var(--b3);font-size:15.5px;line-height:1.55}
+@media (max-width:900px){ .benefits-row{grid-template-columns:repeat(2,1fr)}
+  .benefit:nth-child(2){border-right:0} .benefit:nth-child(-n+2){border-bottom:1px solid var(--line-b-soft);padding-bottom:20px}
+  .benefit:nth-child(odd){padding-left:0} .benefit:nth-child(even){padding-left:clamp(14px,1.8vw,26px)} }
+@media (max-width:520px){ .benefits-row{grid-template-columns:1fr}
+  .benefit{border-right:0;padding-left:0!important;padding-bottom:18px;border-bottom:1px solid var(--line-b-soft)}
+  .benefit:last-child{border-bottom:0} }
 
 /* ── neutrality ───────────────────────────────────────────── */
 .rows{border:1px solid var(--line-soft);margin-top:clamp(34px,4vw,58px)}
@@ -528,12 +678,13 @@ footer{border-top:1px solid var(--line-soft);padding-top:clamp(44px,5vw,70px);pa
       <b>millesimal</b>
     </a>
     <div class="nav-set">
+      <a class="nav-btn nav-hide" href="#problem">What goes wrong</a>
       <a class="nav-btn nav-hide" href="#how">How it works</a>
       <a class="nav-btn nav-hide" href="#checks">The 7 checks</a>
       <a class="nav-btn nav-hide" href="#score">The score</a>
       <a class="nav-btn nav-hide" href="#neutral">Why us</a>
-      <a class="nav-btn nav-cta" href="#ruling">Get a ruling</a>
     </div>
+    <a class="nav-btn nav-cta" href="#ruling">Get a ruling</a>
   </div>
 </nav>
 
@@ -691,7 +842,7 @@ footer{border-top:1px solid var(--line-soft);padding-top:clamp(44px,5vw,70px);pa
 </section>
 
 <!-- ══════════ 03 THE SEVEN CHECKS ══════════ -->
-<section class="band-bone pad-y" style="background:var(--ink);color:var(--t1)" id="checks">
+<section class="pad-y" id="checks">
   <div class="shell">
     <p class="eyebrow rise" style="color:var(--t1)">03. The 7 checks</p>
     <div class="grid2" style="margin-top:24px">
@@ -728,28 +879,72 @@ footer{border-top:1px solid var(--line-soft);padding-top:clamp(44px,5vw,70px);pa
         <h2>Every ruling is kept. That is the part <span class="hi">nobody can copy.</span></h2>
         <p class="lede" style="color:var(--b2);margin-top:24px">Count 1,000 meetings an agency sends in. Count how many passed. That number is its score.</p>
         <p class="score-note" style="margin-top:15px">It is a sum, not an opinion. Nobody hands out marks. The score is simply what the rulings add up to.</p>
-        <div class="calc">
-          <div><label for="calc-sent">Meetings sent in</label><input type="number" id="calc-sent" value="1000" min="1" max="1000000" inputmode="numeric"></div>
-          <div><label for="calc-passed">Passed</label><input type="number" id="calc-passed" value="870" min="0" max="1000000" inputmode="numeric"></div>
+
+        <div class="hallmark">
+          <div class="hallmark-stamp" aria-hidden="true"><b>925</b><span>Sterling</span></div>
+          <div>
+            <p class="eyebrow" style="display:block;margin-bottom:9px">Where the scale comes from</p>
+            <p>Before silver can be sold in Britain, an independent assay office tests it and stamps its purity as a number out of a thousand. Sterling is 925 parts silver per 1,000. The buyer trusts the stamp, not the seller's word.</p>
+            <p style="margin-top:11px">A Millesimal Rating is the same idea and the same scale. <b>870 means 870 qualified meetings for every 1,000 booked</b> — checked by us, not claimed by them.</p>
+          </div>
         </div>
       </div>
 
       <div class="rise" data-d="1">
-        <div class="score-card">
-          <div class="score-top">
-            <p class="eyebrow" id="scoreLabel">An agency scoring 870. Example only</p>
-            <p class="score-num" id="scoreNum">870</p>
+        <div class="gauge-card">
+
+          <div class="gauge-head">
+            <p class="eyebrow">Millesimal Rating</p>
+            <p class="score-num"><span id="scoreNum">870</span><small>/1,000</small></p>
           </div>
-          <div class="score-bar"><i id="scoreBar" style="width:87%"></i></div>
-          <p class="score-note" id="scoreNote">870 meetings passed out of every 1,000 booked. Checked by us, not claimed by them.</p>
-        </div>
-        <div style="margin-top:32px">
-          <div class="benefit"><b>Rulings are kept for good</b><p>The record outlives the contract. Deals end. The evidence does not.</p></div>
-          <div class="benefit"><b>A number nobody else can produce</b><p>No agency can publish a checked score about itself. Nor can a software vendor or a directory.</p></div>
-          <div class="benefit"><b>Paid in 3 days, not 30</b><p>For an agency, settlement replaces an invoice it might have to fight. That happens every month.</p></div>
-          <div class="benefit"><b>One line in a contract</b><p>Once the checks are named in a signed contract they stay there until the contract is redone.</p></div>
+
+          <div class="gauge" role="img" aria-labelledby="scoreNote">
+            <div class="gauge-track">
+              <span class="gauge-band" aria-hidden="true"><em>Typical show rate 700–800</em></span>
+              <i id="scoreBar" style="width:87%"></i>
+              <span class="gauge-pin" id="scorePin" style="left:87%" aria-hidden="true"></span>
+            </div>
+            <div class="gauge-scale" aria-hidden="true">
+              <span>0</span><span>250</span><span>500</span><span>750</span><span>1,000</span>
+            </div>
+          </div>
+
+          <p class="verdict-line" id="scoreVerdict" data-band="strong">
+            <b>Strong.</b> Comfortably above what a healthy show rate alone would predict.
+          </p>
+
+          <div class="gauge-controls">
+            <label class="slider-wrap" for="calc-slider">
+              <span class="ctl-label">Drag to change how many passed</span>
+              <input type="range" id="calc-slider" min="0" max="1000" value="870" step="1">
+            </label>
+
+            <div class="calc">
+              <div><label for="calc-sent">Meetings sent in</label><input type="number" id="calc-sent" value="1000" min="1" max="100000" inputmode="numeric"></div>
+              <div><label for="calc-passed">Passed</label><input type="number" id="calc-passed" value="870" min="0" max="100000" inputmode="numeric"></div>
+              <div><label for="calc-price">You pay each</label><input type="number" id="calc-price" value="200" min="1" max="10000" inputmode="numeric"></div>
+            </div>
+          </div>
+
+          <div class="cost-out" id="costOut">
+            <p class="eyebrow">What that actually costs you</p>
+            <p class="cost-line">
+              You pay <b id="costPaid">£200</b> a meeting.
+              Each one that <em>counts</em> costs you <b id="costReal">£230</b>.
+            </p>
+            <p class="cost-note" id="costNote">A premium of £30 a meeting, or £30,000 across 1,000 booked.</p>
+          </div>
+
+          <p class="score-note" id="scoreNote" style="margin-top:16px;font-size:15px">870 meetings passed out of every 1,000 booked. Example figures — change them.</p>
         </div>
       </div>
+    </div>
+
+    <div class="benefits-row">
+      <div class="benefit rise"><b>Rulings are kept for good</b><p>The record outlives the contract. Deals end. The evidence does not.</p></div>
+      <div class="benefit rise" data-d="1"><b>A number nobody else can produce</b><p>No agency can publish a checked score about itself. Nor can a software vendor or a directory.</p></div>
+      <div class="benefit rise" data-d="2"><b>Paid in 3 days, not 30</b><p>For an agency, settlement replaces an invoice it might have to fight. That happens every month.</p></div>
+      <div class="benefit rise" data-d="3"><b>One line in a contract</b><p>Once the checks are named in a signed contract they stay there until the contract is redone.</p></div>
     </div>
   </div>
 </section>
@@ -1004,23 +1199,104 @@ if (clock) {
   }
 }
 
-/* ── score calculator ──────────────────────────────────── */
-var sent = document.getElementById('calc-sent'), passedIn = document.getElementById('calc-passed');
-if (sent && passedIn) {
-  function score(){
-    var s = Math.max(1, parseInt(sent.value,10) || 0);
-    var p = Math.min(Math.max(0, parseInt(passedIn.value,10) || 0), s);
-    if (String(p) !== passedIn.value && document.activeElement !== passedIn) passedIn.value = p;
-    var n = Math.round((p/s)*1000);
-    document.getElementById('scoreNum').textContent = n;
-    document.getElementById('scoreBar').style.width = (n/10)+'%';
-    document.getElementById('scoreLabel').textContent = 'An agency scoring '+n+'. Example only';
-    document.getElementById('scoreNote').textContent = n+' meetings passed out of every 1,000 booked. Checked by us, not claimed by them.';
+/* ── the rating instrument ─────────────────────────────────
+   One state, three ways in: drag the slider, or type either
+   number. Everything downstream — gauge, verdict band, and
+   what it costs — recomputes from that single state. */
+(function(){
+  var sent   = document.getElementById('calc-sent');
+  var passed = document.getElementById('calc-passed');
+  var price  = document.getElementById('calc-price');
+  var slider = document.getElementById('calc-slider');
+  if (!sent || !passed || !price || !slider) { return; }
+
+  var numEl = document.getElementById('scoreNum');
+  var barEl = document.getElementById('scoreBar');
+  var pinEl = document.getElementById('scorePin');
+  var verEl = document.getElementById('scoreVerdict');
+  var noteEl= document.getElementById('scoreNote');
+  var paidEl= document.getElementById('costPaid');
+  var realEl= document.getElementById('costReal');
+  var cnoteEl=document.getElementById('costNote');
+
+  /* Bands are anchored to the show-rate reference in the
+     Standard: healthy B2B show rates run 70–80%, and a rating
+     is stricter than a show rate because attendance is only
+     one of seven checks. So 700–800 is "typical", and above it
+     is genuinely above what attendance alone would deliver. */
+  var BANDS = [
+    { min:900, key:'exceptional', lead:'Exceptional.', rest:'Well above anything a healthy show rate alone would produce.' },
+    { min:800, key:'strong',      lead:'Strong.',      rest:'Comfortably above what a healthy show rate alone would predict.' },
+    { min:700, key:'typical',     lead:'Typical.',     rest:'Inside the band a healthy show rate would predict. Unremarkable either way.' },
+    { min:550, key:'weak',        lead:'Below the band.', rest:'More than a quarter of what you are billed for does not meet the definition.' },
+    { min:250, key:'poor',        lead:'Poor.',        rest:'Around half or more of what you are billed for does not meet the definition.' },
+    { min:0,   key:'poor',        lead:'Severe.',      rest:'The great majority of what you are billed for does not meet the definition.' }
+  ];
+
+  function money(n){
+    return '£' + Math.round(n).toLocaleString('en-GB');
   }
-  sent.addEventListener('input', score);
-  passedIn.addEventListener('input', score);
-  passedIn.addEventListener('blur', score);
-}
+
+  function render(source){
+    var s = Math.max(1, Math.min(100000, parseInt(sent.value,10) || 0));
+    var p = Math.max(0, Math.min(s, parseInt(passed.value,10) || 0));
+    var c = Math.max(1, Math.min(10000, parseInt(price.value,10) || 0));
+
+    /* keep the three controls in agreement without fighting
+       whichever one the user is currently typing into */
+    if (source !== 'passed' && String(p) !== passed.value) { passed.value = p; }
+    slider.max = s;
+    if (source !== 'slider') { slider.value = p; }
+
+    var n = Math.round((p / s) * 1000);
+    var pct = n / 10;
+
+    numEl.textContent = n.toLocaleString('en-GB');
+    barEl.style.width = pct + '%';
+    pinEl.style.left  = pct + '%';
+
+    var band = BANDS.find(function(b){ return n >= b.min; }) || BANDS[BANDS.length - 1];
+    verEl.setAttribute('data-band', band.key);
+    verEl.innerHTML = '<b></b> ';
+    verEl.querySelector('b').textContent = band.lead;
+    verEl.appendChild(document.createTextNode(band.rest));
+
+    noteEl.textContent = n.toLocaleString('en-GB') +
+      ' meetings passed out of every 1,000 booked. Example figures — change them.';
+
+    /* A meeting that does not qualify still cost you money, so
+       the real price of a qualified meeting is the total spend
+       divided by the number that qualified.
+       The total overpayment is simply price × the ones that
+       failed — which is the same figure as the per-meeting
+       premium times the qualified count, and is exact, so the
+       two numbers on screen always reconcile. */
+    var failed    = s - p;
+    var effective = p > 0 ? (c * s / p) : 0;
+    var premium   = effective - c;
+
+    paidEl.textContent = money(c);
+    realEl.textContent = p > 0 ? money(effective) : '—';
+
+    if (p === 0) {
+      cnoteEl.textContent = 'Not one of the ' + s.toLocaleString('en-GB') +
+        ' qualifies, so the whole ' + money(c * s) + ' buys nothing you can count.';
+    } else if (failed === 0) {
+      cnoteEl.textContent = 'Every meeting you pay for counts. There is no premium.';
+    } else {
+      cnoteEl.textContent = money(premium) + ' more per meeting that counts. You paid for ' +
+        failed.toLocaleString('en-GB') + ' that did not — ' + money(c * failed) + '.';
+    }
+  }
+
+  sent.addEventListener('input',  function(){ render('sent');  });
+  passed.addEventListener('input',function(){ render('passed');});
+  passed.addEventListener('blur', function(){ render('blur');  });
+  price.addEventListener('input', function(){ render('price'); });
+  slider.addEventListener('input',function(){ passed.value = slider.value; render('slider'); });
+
+  render('init');
+})();
 
 /* ── copy clause ───────────────────────────────────────── */
 [].forEach.call(document.querySelectorAll('[data-copy]'), function(btn){
@@ -1091,6 +1367,67 @@ function say(form,st,text){
   var btn = form.querySelector('button[type=submit]');
   if (btn && btn.parentNode) btn.parentNode.insertBefore(p, btn.nextSibling); else form.appendChild(p);
 }
+
+/* ── pointer-tracked glow ──────────────────────────────────
+   The highlight follows the cursor across the button face.
+   Writes are batched into one rAF so a fast mouse cannot
+   trigger more style writes than there are frames. */
+if (!RM && window.matchMedia && window.matchMedia('(hover: hover)').matches) {
+  [].forEach.call(document.querySelectorAll('.btn-primary'), function(btn){
+    var frame = 0, mx = '50%', my = '50%';
+    btn.addEventListener('pointermove', function(e){
+      var r = btn.getBoundingClientRect();
+      if (!r.width || !r.height) return;
+      mx = ((e.clientX - r.left) / r.width  * 100).toFixed(1) + '%';
+      my = ((e.clientY - r.top)  / r.height * 100).toFixed(1) + '%';
+      if (!frame) {
+        frame = requestAnimationFrame(function(){
+          frame = 0;
+          btn.style.setProperty('--mx', mx);
+          btn.style.setProperty('--my', my);
+        });
+      }
+    }, { passive:true });
+    btn.addEventListener('pointerleave', function(){
+      btn.style.setProperty('--mx','50%');
+      btn.style.setProperty('--my','50%');
+    }, { passive:true });
+  });
+}
+
+/* ── read progress + current section ───────────────────────
+   The rule under the nav tracks how far down the page you
+   are; the matching nav button lights. On a page this long,
+   knowing where you are is not decoration. */
+(function(){
+  var nav = document.querySelector('.nav');
+  var links = [].slice.call(document.querySelectorAll('.nav-set .nav-btn[href^="#"]'));
+  var targets = links.map(function(a){
+    try { return document.querySelector(a.getAttribute('href')); } catch(e){ return null; }
+  });
+  var frame = 0;
+
+  function update(){
+    frame = 0;
+    var doc = document.documentElement;
+    var max = doc.scrollHeight - doc.clientHeight;
+    var read = max > 0 ? Math.min(1, Math.max(0, doc.scrollTop / max)) : 0;
+    if (nav) { nav.style.setProperty('--read', read.toFixed(4)); }
+
+    var mark = doc.clientHeight * 0.34, current = -1;
+    for (var i = 0; i < targets.length; i++) {
+      if (targets[i] && targets[i].getBoundingClientRect().top <= mark) { current = i; }
+    }
+    for (var j = 0; j < links.length; j++) {
+      links[j].setAttribute('data-active', j === current ? 'true' : 'false');
+    }
+  }
+  function onScroll(){ if (!frame) { frame = requestAnimationFrame(update); } }
+
+  window.addEventListener('scroll', onScroll, { passive:true });
+  window.addEventListener('resize', onScroll, { passive:true });
+  update();
+})();
 })();
 </script>
 
