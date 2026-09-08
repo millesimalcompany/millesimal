@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Millesimal Standard v1.0 — a public definition of a qualified outbound meeting</title>
+
+<meta name="description" content="Seven criteria. All seven, or it was not a qualified meeting. A public, versioned definition of a qualified outbound sales meeting — free to copy into your contracts, no permission required.">
+<link rel="canonical" href="https://millesimal.uk/standard.html">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0B0B0A">
+<meta name="color-scheme" content="dark">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Millesimal">
+<meta property="og:url" content="https://millesimal.uk/standard.html">
+<meta property="og:title" content="The Millesimal Standard v1.0">
+<meta property="og:description" content="Seven criteria. All seven, or it was not a qualified meeting. Free to copy into your contracts — no permission required.">
+<meta property="og:image" content="https://millesimal.uk/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Millesimal Standard v1.0">
+<meta name="twitter:description" content="Seven criteria. All seven, or it was not a qualified meeting. Free to copy into your contracts.">
+<meta name="twitter:image" content="https://millesimal.uk/og.png">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%230B0B0A'/%3E%3Ctext x='32' y='47' text-anchor='middle' font-family='Quicksand,Verdana,sans-serif' font-size='42' font-weight='600' fill='%23FF6A0D'%3Em%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"TechArticle",
+  "headline":"The Millesimal Standard v1.0",
+  "description":"A public definition of a qualified outbound sales meeting. Seven binary criteria, all of which must be met.",
+  "url":"https://millesimal.uk/standard.html",
+  "datePublished":"2026-09-01",
+  "version":"1.0",
+  "inLanguage":"en-GB",
+  "license":"https://millesimal.uk/standard.html#licence",
+  "isAccessibleForFree":true,
+  "publisher":{"@type":"Organization","name":"Millesimal","url":"https://millesimal.uk/"},
+  "about":["Outbound sales","Appointment setting","Meeting qualification","Lead generation contracts"]
+}
+</script>
+
+<style>
+:root{
+  --ink:#0B0B0A; --ink-1:#111110; --ink-2:#171614;
+  --t1:#FFFFFF; --t2:#C9C3B8; --t3:#9E988D;
+  --judge:#FF7A1A; --judge-dim:rgba(255,122,26,.13);
+  --agency:#5FD8BC; --orange:#FF5A00;
+  --grad:linear-gradient(96deg,#FF4D00,#FFA100);
+  --cta-ink:#17110A;
+  --line:rgba(244,241,235,.13); --line-soft:rgba(244,241,235,.07);
+  --pad:clamp(20px,3.4vw,52px); --max:1180px;
+  --ease:cubic-bezier(.22,.8,.28,1);
+  --logo:url("data:image/webp;base64,UklGRmhTAABXRUJQVlA4WAoAAAAQAAAA3wEAKQEAQUxQSBMyAAABDEdu2waS9P9nx3E6C+w9IiaAn1T5aSdgZJobJ6hWrtS2SzYnMziHDz/LAO48dLB4BVxBvU0jeAVLRLLq5pm2OT8DUD2QCxc6end2WUwCG7WS+NKWrMoMHN2HLQ9VStUCVFEZvOHeER/oeJsMKqqc4k3cAcvODKAVSsNnnjCjPjIDzm4H8NeQNiC9ispLS1QBnAeVaSxaAdwxF1q4IqDKHqgH4Sruwb0wvgFUpj0PohNXwBZIdiA6zu5EM53Irhay2VnQmAvcyYmD6WExQaY2KIBBrdggREoBJErpBAjkW7RdQBUnG5tlRWlgyM9qOlp+4hVw/HMP2LYpmlptW1X1jUtwhzAxLMFiLKJkEVciKwtJICFIPMFCHFbc3d3dDeK6GIgAMSBAFPcBhumuqu5r27qrqqurrnsef9+IgEbbVk5rk5Lq0RE5nT5c75ff2rZV27Zta5G2PCBpW7Bd4K0xM3qwGPS9fWNpidsMLEUZvdVSck6ltC5HBDTa1oFY51Ep0+gjPh9T7zf5T+hEKQtKpYAW3bls1xil/6khHmNBzsRqAzJlfpm+E6xRu5167zNk5LizL7j8pltuuf7aq66cPO6fxx64R4/OTU07l3n9T1WaZOlepZQqV7fq4bK2/YZccOPzH839fd3mCGymuHrTX9/NfPLyUYft1qaOdhGpHZzWLmmSNGi1fbe++x58zMmnjx83etSokcPS9NitXX3DTpZZcqRMi5FmvU+a/sLXq0LQpiQWUTrx1D4M1T8QcZmANtWsnv/G9cN2b6VfQf4D38QCLc5puz2GnHXjU2/N/uWvdVtyE6XYvPKXz56/7cJ/7FtR3+S0POIkC6lezxF3fPKn6ldmpw8X6SRzpjhWQkr3h6cnWsRjNb5WfHrXmAHbqZtYLZSWswtxoORSGEVNN9K079DpL3y3KjZdXyXnSkpU/HFhSo8bFs24/fQBLZTdDbynRl87y0JqOGDiiwtqFL/Z6ZKdTrE+6W5zJm1fpBScq16T316bfEAbJTHUGrcIGuSc5EiJSJl6L6047qp3l3D1bBI81FKlNNFMSZMipVJGV54olFo2Y/rRO2S7zbBaUPWE7zb6qYVxFiE8MsRF7GAy7psSkwLSadW753VTyMdqhSu1cp/re/SYqTfd9/BD99485Z8DOjJkFlQ9ti5D767crKdJkZ1EOuVy6ScNU/ZXVEpVzbljSHvVAqdNk8HXf12t3giENF4QPExKXEkAqP7ssr3rZOQrb+c0O+pGB06b8WcMxmndt3ccvh2eOKEZ3eoOuPTTjZBO2XkirAgmuyOnrofWvHJqJ3QWyhnf7JgHl2bXJ85FjGWSPIoB5NzrB6g3tLJFFql73PqLfpUOlVypdmn77d4DUu8BjlTJBt7wQ6JsEzJ2drktUleoUEp0rH15eCfleosoVdU//KHfszxZdr1ANWWJIQ02+erczorzcjXVOel9nsUpl3EOEXmU3Zv/PbpRek33777j+C9TGxFyj3QrapAoyi5qr5zUWDkncLjvdcWPik2BcIdlxcPUYt1jg1k5GpQTZvg3ADIU0i5OlHS6aHQWI15NwSGPrVVtpG8iVY0qACy5qpfnxKhdeZqPeq8aQKgnPNI5iygAqDytUfkZ0mjd/2OAKJKyQJzwCODDPdN99GdqfNpsAIhSG4mHVpr36rdPrpORyuv1bPeb/wSIQx7jnfRMa3YNXnhhyzIzBKTFgwkUzscohppp9UngiXJtL1uCNVVKkeWa5o1tmpHKl4ke8QYH4HjcE9kHf13R1pthSLL7/AiSOznzIwmzepGSD8q1nLoc9BMXp4GnQU9pnZFqpLU68avUfaTYlMesGpZfnPJNg3IJY3wNRK5iRISw5mASOM8wNp/wexq2wE+qPyY1T0mFbzUc/bXuvpxmKbJomtiEMFYORUbkOmepRvkbEUQjXRqziGtw9mLvJqJnrhmWjqvjlFSpqck5P6umMpwyw4KhmSf0Kng4JboEkVzCqaTkMmGeOB8g5AhSGiKRjFSVR7kilbJ3dUYusM1oltGfe6tf6gl70duzEErpFFJIfgQJnCXM7i8olEPxVFOcWTStmQxvuCGVcnU56VvFpKqyNVRPb4TakgbsGVXBVVq8eU8SuLFtdMVmEKLYEzTVBDSYlyAEbLs6I5WD69ngj3LyIuVqEcXwwxGYLQNykw8VxxyWtiXUxbP8IfMgScNBAlAHiGKYP7gYe0AhY49n1Pt9uUPJKMMDzUmAVh2b+vCgpAxhRnH+fEDqXw+gUA7bgulbwK0NSamQrybTq0BELsNe3uPgsPBApBl4Rjouj/3karK/cxkJij7s7TEHBI9jhGBUTwFf909d2fs67idIUlPZABBUCHxS6gplAfo74C3xpIlzT8KKOTunGkJZpnRSSVU1JnVlm9V8ESAUsrZArD0KvdwJ4RyQCYqjoT4Rh6+KSLoEpO0LkCismvI1RAk8kv4xmxipO3VT9kfC5oZmlj+PJIwis6PdqkQBu2qc13CnWJ/ptET6LATkfEaqE/7VDnnGjHADZ2dZTekXWwctIZlCKEO2/YU0RKsfa5P8VJ/anq/kxPUQljmljub0rwGE5Tm7WKgnvAHPxAm4m5EAld3uIRe2kRstqlEgZZ8FdsdDr0PtjCkLUZxiTVfKjFnNirdBZjHic95aFM+K7t1WmGZGUoaZFrlyxlhcDOCzStRKtX4VIl40WU9DjUcrMbNxR8JMtkNXZPm5vLQzxdZDIczbmZTwqF1rpLCD0CiG3r+V+1ic5iWyy48Z8YpS5Raoan+DKpE2TwGEJv4M5QXRL29KIvgrJSWa9VsgLKCOTfWz1eqOfJRIvz9T4tmrJZC2nxV764oGZMAiUG6Dnk7yiJsQc9h6HBIjJU1+S3gxXd+IAg5LGhOapwatgSwMZPBE0lQt6KmRKPM6akuWjPLQqIHcJW9XBUUih+OYA3IMGBRN5URyEAly1FFbi6gIZnhxRaFU9i+CWZ10ApVI4wdBFimg6gXiCSgaMGb9RSyHkRIKPACRrU4SwnQzSuSEmjiSvhEBpBrZnarPtiOB7qznbAh50WNSxM4hERZ1nEBKGNYXg9D0AaIIfmRcCcgZQhYrx4Cwbm6sqZYpauCrZrpi5IT1UKNEcowV+Iw1x/ifA3JgYmvXH/MQsKqNYS6Rsx3IBkYynmw3dMmF8EEzwvQwrgAoXIhR9tX8iw8piHCO/AdWIhdDZAnFm/XK3/TVEhnjROp2C0fqZPlk6oUGmgpIw2fAzD4iCj7ADTriPK4+0PcfZeRV2y1dNH8jylhnmhoWcxEjUHamnn+meEJ4khlU13/rj5+un+3vjeSwqrvfmZK63wPHgBCmkZKqhkSc41Ghe4gInmFUVSUy8E9d4eXLSpwstAh+bEWYV7RfByIHgGZTpqJcPE4ChX5Hb5Nea6oJGofUFLx4BhlmSjefsAUidAk7bjLOEcHMOpT6XN8r7/Tp8lK/nQJwmEmokkusTrjvlKgVmzI1Fv3Zng5Ulfo7K04cXxRY/u827imfVgE5Cng+xVJ3R9qychWzaPZc2211rooIxALlEzXMOlOPECW9Zf6uBSHCx0rYvQdW4wiuIIFHjIDImP4IIlPk21J6EB1+ypciCM8pBAK0L1NMMTMaPAhRppA+gJQmHpSBSR+Bl33kUBafvVJyMjcVDmo+C0LL8852R7lxSZYIntDMjNR9IRPuskUUl2uOy97diWRJc8a8YYIOS5sqbx1F9Brm1WV13oYaaQlaUY8FqwieY7pq9GaRPwn07OJJOA5PksAbJtnBU3pkFtRnT0GYf1eZYuyv9G+U1NAC0uzDQkITBM/DnU8CX7goL9p7MWr5KIKl5AYIpTes+Sv86/WIZm47y5RumKt9VkgRDyYMB9pGQIlXiDmnmjJP5ltprzjs5vTvNyCauesPdsqrnYwKrdzdwOLmjPrBRAgLxZyjDXRlTySr18W6crJLVq72oKlPmujq3S+0CalnoUdWNWVv9QAJ/OCCfEQQSO0IgDCdPabmvRmpsCE+M6i3/tlNEYG0/6lVRBnMR5HACy6E0IL0INEYO4ojZLb5eS119fZfX75IQxCXEXgmiGRRE0axePO7nv7dpu3bTNV5zNTSChKooX3pxcjjCKwrCwqAPl9+VhFcSQIvTtzBKwmxY6xzjexX9tLVO190RzFRnYIFwGMO0ARetRNlHjClMOz6UtMZQsatZHIDItmwNympqsVf2rNx7TtEdtxkEiqHl0jgAZML8lUiKKQ0QSsk/b0Z2/5OaWwdpJsbftDP+gYrOu2+4cZTkRdvcjicBN6Qm4eRHIt64znFYomTAk5UzZTWy1i0Y4Tnyzt4nnxXn1FP1kloXlWy9I3mQxBnRiCZI5ikKcZegBpCCY+pzprdyC3/yEUk8CDW959eWZWH7uymMVrRAuMSdYWKAhHcSwJNvPqBVNk0WtwY6rWtto7KjTtQ5gOZuGHaJkByD6l6VevEpUSugtDFQzRK3h9zBTPmY4X3YQXKVp7LLiz8lE8bUU1NhEgUhnuxlpIgCWszvdgyrStlrgOiAEtJe1t6qtsRF4ua20q1K5HTNfFqN4ovQZWIYBRePwNn9EItfm8nPhAryBQCnSqxGOWJ5dcKXR3KBbc7I1hOuUGElBibqXneSvnkxu0p8+HNvTZA/0Z+oaYf2OGE3NRbUam7vuti7iTPdq3gXYOSWc/LvUt7xSdKSGOYaj4RIsj5LWexxWUP3Cfp7LLOSw3VfFxSIhX0Po2RDW4cotGw24lU60qoU0wtrcNlVa3zyKcB2rxQyqhvrxGcrynapBJCNyqCIiMtIYsgjotdRueRIVxKAg/lGk0lyN7Uzt2kCOdyceWl5cWlV3W9xk8JglehRq+65juC9gKKxlHObiFCCvDkxwaUeizXsHOYyiVVgEdbK5F/2XSuXiSB+gfVFkzyYV0GjiG2sm5Jla42s4mru2C+hHoFkG4Ow11qJTKRxK9GHPqbIRqsLoQuwWFeE8q0P2hbxZZ0BJnbkCdgM4nQURdruM4nreCbek4XF5qMVSmQBlMsLoseU0maz9lVD33Paj0fggnZkF4ilI4gtyz58unpZw4/+uBBBww69ITRk254bvZqZROXfis+BpNMKTIJIYxInjRWcZQnu4dWBxs7z+FYPfQOi0GotEGEbtgoFABQ/cMzkw7fubFFBcG2g6a+swosuhyabQTUUicjeJ4wrysxjS6xRvtrigbn2W0zTkz9SQv1VspEmkhKVCmrqvexfQuqMUpxrymdyi55clT3elqTremkd7kdaD2+tz3qwZUAkjsKGt8IA0Rc1ZUwl3Jf/zbuysxBjc+sBctjIY8NneRvXLNqxao16zdLw6308Xpp19+ZKjUCH1CacUM0N82b0kvhDzcd1CS7AakDrlAncx/KSqepbcZ8lkDCi1/mY4Q4NmjnkZJLuYKaQvx9IGZOovUavG3pp89cd9aJg/p369KuTes27Tt27T3o+DFXPvLx4q3KRSSKRBH1vtYpQZA+XxaqWDxQ5TVCjSTAqkf/Xjc7voDR4n1R7/PIFoh5wWxaTJBZ8imhPgCUGtLuJd01rYak3kRXfnbrSbs0sY6TRjsefOGT80KAxNqCw+8ddRncI2Luu3hGSpfJ9Ono1o46gtb6xe3xaKw3IeMZshYj4pqehLl77i62mMQUmdI7YTL/2kFt9eSWjaWDaRdbxgLT0Dvq7HrBzE2ZBbc550XNQE3Mi7b7K+Gxd+hb8WuD1F6+nXZcfMCXkEQIoCtQEVxMSt7k+tqWfoywENlj67xr9q2nDzik0JghlNOmYuy7W5TexfMlCc7U+WXkFeCxU3CNBBcQv7q/qbdql4bggo1qP0f+oXa9v2LUZ73U6nKgla4SOG/5q3764MymFFB3A3vYedL3AHGOIYLH0sRjkCSIMSKLotf3JYT5qI+SxmjvfyuubB9dppFxTS/CfANxWSBG1bcWX90ti3lXEoiGwYg0OPG9CCASJjW7EdNC2L/GET9D7o84WiPMOtjS5Iqi9e6AhOcdsntvKtrjqE+5+v5yXHrFKFNFTYjzz2jqYcgKGnH73bMeYi2WeLyigjCthsQfCY+doq+Y1b0cVpxf12cvV1mkjNgEwvYpm/yYzCeMeqoXo18w0HTkSRpEMSwa08Db6Bpotrddb94IgitUlwfpUpqlj+wYKk0m9jeA1MVQ9j7SiXhuk5CWyB5LgWs+cxoRV+9MmKvFPKGQqoetVzdLD5X6HVFD98cUTxFMTS+Mqt2fHjPXEELkFGx/zlUn5kSRN1c7LcnmYsUm/rQzSODdW3GrroLzRcUTmNHHP6loGpeHz4V4G7xGdYbKN/3HbJ49EBIew4wdcQziIyA7p0Z7+GwuUeV9u+Z7+wjeai+kvdUTzQnRq4OGV4WwuJXeZlrrf5kvRK1beqmGE4lg2xSq9KqBYu72B3BL+G5xHP7YjlDX3nyUZ4AICZ/2x9IZWEbvvaZWGJqjfcF8L5t5O6gpFCH8OBBR76ElstuKAv0u+J2TwSRw7sQP/wyCQ3gJpp7AaJC509S5WXOlsKFMr5ZNYTzXTOlvAc+8+zpTt0d4rOIIbnCFqS+s+5WoIoPVf0fUk595dF6M9Kvm1mSNYJ2BU3aLml3HkwrqkKMTjhACPqeOVqZA5LD/dbe8MBFdQBp+a68rEUVSnn+K1rMzKuO/rOWV/LqB9Z0Jc+NkPxy+6UpKWDs7v9lNWXPqhJDECKqHYksCKm//I4yzgCNJ4EYuCNo9SQTvNSMBVnWI5KI4Mt1+WOeXHYDyCsdIxVrNDbZmXkru2t26mo48Jo++WR+roqzJLyAK/1XZiqEKMv2TOyK9wgXkZHOHMbGFdwh1BmYKOoewXd9XtwWIyG4AB0/cbSpMQpivdLCGdH7R1O++Y5wIOPBbE0Idwmza+7wB4fBlE5RKK62KuCwMS0uW/JwO+hUOoRXtmv6pHKLNE1L0Jcwd/P51lTcgyn10QVu0irKG8wvLEtCE8EUrpMrAIOA2aXKUVOpPOHFyXfja+QSx5PHaXnhJVVLHgeIAXDCCT5urW9Emg3rzFf5t4eJf3LJSchLQsZvhDFBhIfhgvCogRylSJC6k4qjIEXzVQjFj1oaBsCIvRoTEW4Q54osmEEU8cArC+cIJeFMio23/SlyOGa9s8KSqRW9WgmEfFVS9nxLhAOGoqErgl0aE4kFZgjA4vID4QhuQxyGULmHP04hgcQUCM5DDZ2lF0NkT0VRtFJlsQXfCnLbbYw9sIN9Q12Ei+b01ZXjVgYnjUdy4cPhtF8WMXWu6NBEW1iXeuK6E5HAECbDwvS+1GbJRikDEh+NNipSV5ihlfbHf2ZBaBKztq4eGfPNFEFld/YV7Vj/QpEpvLgEN5H5b38040NuxR0yhCRC5VVq2nclI1YaBiioDrfOGRNojDkxx9tzrYzFk35ZSEq9th9eOkZ5VXLjG0eAqXnJZtY+iykJ7AiI38reI02p9uXEyRpp9HgHnYNbZ+6ofr4gTwZMTUlUmoEcAlz7Rq4AcFtQlFOlCrXRr/3Udhjj5jYNQYoFLCXU0I+AAYZsdh4Vo6oy/vQu8N013igrEfhjtvFpGTlEpxxWlNfQ2VZXL6kPaKqKnE/IUcc2uhCGFrZRw+Jhi1p9ybdfp6tFuv2IYrTSl5bB6PHCrZ8URNPIeQgKX9Ran5+41J4kPxMwQPSSJhPtH7hqzfDV81VhPALQ8VtusBpmj9QYqWBFQhOuRO1ErOQ5vE7Q6ZQ3mKwxRHBDJX52JQTUtOTL6H0QDt+O8lxRJCITppIQJ2TkHCX8nAe5Hbg+QRJTdOKNBevww0uWXTNAVP2/0wkKICR7BsnBbsSLTKwOK2M9aKVxDquOMnb0aLkdfQbg3Yfgd7psUKvuudGTA67kWwnCjVJMaxmHWn4DIB0dFvuvuJiXD8TwA2+CLOoyW2QY9Gy9HbLTR6BD0UKQjkpWtCEWrDovxjD2Xw+tp6KbYj2QEZ5WBFf0SRAE0EoWYywgl3tuCSDc0XR+g9dPoR+BYlIDvt6PMVObPhRTxitaUol+9F6IYyxxLAb83RQ9NNtEeFK8o3yUQYVFSbu1DAv1w+m1W2rrLGjgO0Ds8O9ehT0OG1R0dYKr3lWjhMCegFKufio3SqpaT9GR3miF02mqBerrKuKqCMuyLg0HgQSySTTsTtnLcyn1U4TRSQu3HCtJD8BE8SkqGWiuvQ6jnSO/FrjGy4+Ykn+uY7VeSyG29SYDYzbBNAwjDSpN+XEhLSOfgMLcpM4RwqdrWvHq36EUYco9NfytQ12MkGA9EirJKU8I/1yMUq/4SRNYMO/fD9VrbjRhCOFKYBtXC4TX0z960EhU4HIoMTSurEsI9eGux7S+4RAIOJ+p2jOy0OjYeDk/SAjfkqy8VqQ0wQJRFIIEvTrd+5GSsYMHHKktlARHcaeKXNZyVU4jN4TPGkDu8v9BwJScY7gATocYZEC9EvC295CIlyBAIBQ6dw+d1TQyVO/MG+icFdq1ErnXQhCPLSAeYAEKtf0K6hbL63yUhjnUZr6kwOfoHhDxn1yP4lDHceA84Kvx2iBwkhOfR6udBJHGsczjB5GjntZLnRmrWkUSAGn+ESOLC6xPPhchMMR0ucZwhkwXGyVLpuEpyHIjgfoOjoM4XhvYajJhdh1LM1j9xxNl9SJPhdwCTAJzBWyV1AtKiXJzkuMN+xJS0F/Cz4Yk7IJdDZCdyOoQEmPHtWggBrbVc0eYKQlHqO24u0HAGixR8X5OjQdyutzMOHzPUi2+5KpkJKvD7V96YwjpsvsRsUQOUCMid+nbf4CamLaOtf9UqT1nkaPYnAWJ8xYhpBSAejC0Ar3/yc6R6p/VxsQZ6Zr4rIE9by39GGfOsTJAL+ANNnUkearYpJHmSBCiJcZsNSyUmEPHanUx2o+zbwpKCD0QtdooMf2TJdLnEt7kKIxjdeYu6XWsOgoTDUJMc3w7rpdDzNEJz+jJhiK23QdhFt3EexrACch+ENioCh8MrhpM+oIYXBZFMNfG2HohFIw5fRD4CbJQul9QjLhxGIFwwWrEpV1azFxC2b00nmmtXID3eSIJacJHJn6gzrPMx0dZ3CsiNVhmwAXO3VOxMbJpC4r2ZwH0LQstuMTf7xee4pNTEmA4G4gOjndUmyaaRETxqtHtDE+8toJ2Jt3T1qH04kfvy3ZGJyEr2IQwfJW6CGhuuDg9PlrY0MczOUKvGFQCHb0qUlg/fTEpvTv6HBD6mSAQpE94THRjtpNeUUC4d5jBjHRi1OKMQxUSc8nfLBVJ6xe+xBaDEQV4kNTuhQ0CmQ2h/ZrM16ONGu9cdVL7g8BxheNEL0eOA4i5461erD1Bs3QEbKG3+VyIKXM7ImV4r2prtIlkYMtnclTC06PNxcnfGN8PTLhPElq7YEGTltEWeHMgMGGYKsdMayR3sNIepNgVwyN5io1xBPFzNZPP2yEBp3W8TXuTJH5T/myQw6M9DJB1AwIKGSEtojjwxeRumhKle26FgWsDmLoThu4wWKnBRh/EUTbRqZ8LyEy4wQn0cUhb+EQ4RM6CqF3NDKPkAIvOVSzX1qAPiWh1PWfMlSvOiTnhSLxGG9blbUZVHCbDVe/LpjAsBGShFwWMussNqNATMa2Cyu82Z3JVMNqZpBCOOq16ThwJjHFnjK4uqTtjwhDlkl5CRIjG8P29A9gy5kM6Idg7OMpohAjFMCWO9NouNHQjF1Z9NVawWSBaD3pPUutwsE853h8qUd4YxoC2BeEF97r4Z69shgVHwrjBXp7eySErB6vam4qpTnTYrIbOXaULqTY7IriOc8b0vemJQ2nRJwh1w7Tqk9QUmP63/iDlIBPcRVl5IHMlhFCndEGwy6K7RViMyq4Jan1FzP3ogAn5JH70Rehulz4DIOXID7VEtgtlJ5LBUpTp9Jwo5mAT58kXgz3oPIAFCvtkkoXCaUyeP+3KeDSkwhWwYSTxDat8TwTMmP+RpcNwgagg3kxLCgLYs8oKTcsnJwrBQDgdQ4X6bd+oU2vjGTib04ITc0s3kZ0jCpVtw+DmVIsfobfRIgypXfweypC0eUNJqRSIKIpsCppAjwEVZowUq0Go4W8W3sud3iypcrgh2Y/CBPZkrdwdkZA6Hq7vUtp4swzU8/tMoLHKe2hw5//J1fItlnO6Wr4Koxv5iQwc8YORdFaI0qIYxMrG+KG2Z/gnnEPBtylpBxzdDhtPcekNUJ8Bu1hENGOlVLaUPdO32/AYmfbqf3gTCVI4NG05AhlGO+aJ1/kyxCQ8Ccqveb6WouqklpH/x4iDCDH9ikxAeoLzUOEa+d9kumuvVWoIMn6pOWEBJy78SYYkqIYDh+gXDScF0aQL3BQezAnQrx+KqF+Ne7kui2boRARlq5lDLYvHF3p8ayqv2El70WCbZ+IHwYv5bHHn7UPxdat5+3IqRl41wpo8CUy91PGt4/MSDo0iAGRH3QGvfR0Gi2q9LDEyzmCHi6h6G7aRHtVR1D3gG4yIvOv3Xa/PdLnHSbMKyUiKjIZLFgKxvMW5/XN3ug3RK084Y+aJqdI5vSA5jHeBTHcOMVhZyQZTMVCFv6Z699ep2lBm2R8Ib/WRW3wKd3IglUF7tPNMBPl+FVOT6cKx32xqHL/4LelIi+JdRV36SC2+kuxYbvleQ40hH+MzHLf8bqoot/I92mxzYkSJe3ZYy01kqhEd8hG3lBxVZKFhjMwvcrHzCzCsQwhVSaxygbFaecDRG1etQ3jXS2NZk6DFxwhpsok4/KskcdVKpt+jCCYQyUVEYivXuNbFNM1sYMo5zuuigpPGShHuESNK2nREi1zAKiVy90CbfGi6wrJSyRi4tOXkQCsPwcqM+Ery5lGpnH8jww9ZuNhqQEZyKpd5EYaDzRsl7KpQMgEj1Va0M5U2M6qOC8iSHI+ALimvl+w/mfXH7nEICJCtFV7EtGOmyIRa2CBNtzUjH9YnwCQkb0rIaxIspXzACGe5iVwnoKFNZqSJMAhGvbE2pqa9BQ8VlnwP4woShirV3M+IFMy6J5HeWKPT4X95wYt2ihWLAocALPeBSb3/FhOEQmQsXvC9+BfCJO9zH7k1Ji+WJkEVmwRpQoettKDWdpX/TjsKbK6UXZWSw4WF5tP41wGcQFuWNwXaVje0RICDHaVHvfcRKWATXGWObKtZeIeDXxoRia1dcIrDQuAu/AfgcEWI8uAfCwsxQPUdUfVNO73aUfmKum+4lAN6XMEx8FUzI/z2AxjVqFZC684Hb8WcbxcYJhPBgTmQHWdU9jzhrX0wjwMMGPAqCehOpNYafOcTyrm5Z4pu1DPvQIE9CcFts3DzC3ajwz0LwUm/xCROQ8RBZgRhJUxHB68pV3Lz6AUR+kXFWygB+HDNMHSRz6+JlCyj1v6GqWPGpS+mZGnqln4DVbQhFZr1gQ/c2ChmE7q/Aev/WlDT9w1wzKF6WstzFwm0laclI53V5fDg+B+OBhCErl1ywYQio7LCunT9UZi6LA4NRorp3r6liQX6b36/FgLte+RCAoSdyFOvyvl+VeVolvRVxj7gTE04q5gVhWOVwavm1+9EBwcq71kiGEK4pJd0NbcQekcmOYFtcJOfZiwZkTqhxjWnffDkIJ5AvPN7aQ2miqTIsVX9QxsewHaLqPsdbqMGxBf4093xvbo6uZLzCUe4ckP2THFWoVslg3WVSKcst+4SUvB9hO+fV2xKSnneNCgmwpYtvlMh5uesw1p2OMtJhHQi/8uv/IMEajl7GWFztmha6sl5rSxSLxyCyOFrVK1E5LGpkyQKhmeyIQ9i+6yDKem3qXZsoYxxgIhprBf7l+ihhlcCd5HZUzTeEm2zpX8pqHftdPI4IJ5TzCtrv2womJyqoZ7RfC8IjZLQ7YWp2Dva7wlPOKC6+aOFuweTC8C5dnfflvdspIf1ALcb5gFB7WYUVILx6/KM5ob5RP5nRdei4lV/rTMK+E7mPiyDyiSJsJEbe9Noeg4zD9HEPC07rpqSOMwY7skVZ8YynHeEimB4J61Kue5H7X6Q8AHjTDiYBFozahe8VYrHwuS6s0skWWRY8K5EsQM8BhpIrfwOgwLYSaTiU0W7G3eEN+rik77bUwIWS/4qlIkoa/wrC45wGhQcjzkn+e/D83nYWsRFGBsYutjovBaow3py1sSuPiOBhPCvDcWH8uQHehYfIRs8oZbme5gwkWQ1SSgsR9BJvZZOGJwIsGIZs5Y97WTovKMhqkI4hI7iQBEU7xPEIAfMCQvHUmygzTLaRDaFrecbjQsiwN2GFbjk7bFHKJr1hSVM0GAY8j66SQ+bEJe4FpV8CR+Srxp5ft9AKJXV/BO4Tq9qhwXDgJkLegkkmRxeccrF3uQJKmizJCcuzdAhhw0DFHctK5BFJ9U6EIVrEJk5yPAkYrSCOM7TzCkYqNruro9ThpI51QK73KByUPRTsSRgeawc8DVyYPE22livfGJBIOYSLQTgHZKRfwGASlAdyHx8iBIey8N2LpTdwpZ/Rwu9yIDyCw4lrGA4RKvyOIoGW3dyl+kOAUjbic+MpTYdfIUHhxmK2xnkt4YJoLbRvsouisbrM+1pNP5FD+F9cltNJAUsIV5BS4ZaOM4nB2B/OWsPIFJ7nCJiP52gz2tQvD47RZQHoM76KBTUPuD+EcP7TWATOpy/kIjZ28IxnnPIu25jbehHmog9jX4hTTFrDKf5XcD4bIzfCNJn6nICDg5GuMPJGTkcwOJPXMKI4EoaZl5srkChWKPlC5U3P8E2pMCyE62mmrGG4PSb6FNTv2h7MR8HTb1qlP0QwIz3gwngkVzaXXqxnpsvIMEVd8T3s6AafevCNTzzzyus+t/uUvQ5hIh5rl4X97kne+6XdRb154LYB0uZcdwtQmourfTK+I7gQnTfpVh55LsTYWhYNf/SJG155w+dKvzinlsJ4F3LX2NDeLxovcIAC7wp8FcHVPlc4jMHjrWDY35YNHfyiySKl06kBRIp/EdzhEwKG4inXcHbTlNG4HTIrNnpG04UeYdfDaD6eAe4TR6DBMINWnhCjHWCqf2TNpo5+0eiHTLRjivv8fKfkQ5+Qyd6EYeeLVhYTzDzqCpfkS9LdmjrfQuQPL9lQ0mAhCI9q205oMEp/7MUBaR6VjnAxMmz0LfdV6QsyxccO2KIVVYn0B1jZBo3c1++KIR65To7MUvPqQxxhYOGLfuwPEcytQ2hRig5KvMr1LayPCNwu6cq2LRdmXGMyRDGet+ZAUO78ijdInqxsVxwTIPIHDp/hkav/PXDrM4hX5S/PzWPQM4orWNfWMx70B8HloOJyIy+6w0t+CjxGAoJnxd012T8BuDAfws251k3rDYkd40xhrDh4o4nCDzsG6tvd4Zcb6UQJWfN+jxHHWLA+hd9Gezyi+MtMBfTgRDjIKOlIOCxd4JcbaWSZiwidmVJBjOK70bEYDtSb/Sgr3Bq9AxjnqsqqRGIrt0rZ1SwJhMpBekEqbGzvX+7aH4r2b8Zo6xVxcZ5cR5m5AuamdtigH5juroJA5hW4CsgLciOdN3qcRfJX6yJaQC4v323Jn1756WPR4NQOeaLGiVn61X55HI+7g54UtG43JfV/BuFTm0aCAvr262NiVn3F+YhwyoPM9MBqNw/tEm9gXRvf7Qa862RDYq3JDdvbayXlPaMHiZN9EWFEgXQAr8+4h3anZ8j2RL5/KoHIMfqfTpSo7fEcHfNJL2FZM0LxrFR4Ppj2SuGrIJUbyfJ4Zvdc8XIYNUyB+VxSxzJyu6/0C64O5B/Zc7dI9Vm3380yEUJMr+QHaz2DkZ22JNIjBOdDSMBsfj6ZHRZCJCfRK8UgK7fSw1eVHkK6WtT4LdUQ7d5eSybn5ju0hdw/G+Jckucq64LpkN/06lRzg5LdMS1GFNg5qYm3w9m40WqE8HSViIxFGN9fklufOZAT8Nr26e4rH0SMUuWrP9X7l4RIeoVQfmUkPPgHZvdOj0cZdNau+JQMrhTChvbecYo1jI+GxQ+mM6GNOWKPnw3S90jcImWIyqj69ZggGiJwvPWrtRFGdqnO3cD8ICcvMFj+xIieTWnqv+MBV34HYHpNYW/r1dqrcOGR6xsnTuj/S8rIXbkxhLLKPI2RuIUlwLbfv/68cuE6AOD+hwHF4X1c/Q6fMs+Z41iUi2sZBOQaiNwUo1UdGDtDKPXfwo5L6RdSKsyLUq2BqLtsAXEJDsSxLtfXwT/2tVmZeC6J0L/kmPQcpspPX6G8YwUqbyOPZZCIB7+jyWg5Ray1K97Rf79L9XKlK6cm+Od2ZO9TyVB5V05s/cKPuC6DC/6wF6GuQTOug4DcmLs66IzKKwTvnwLjYuSrhpgKNTiAZ1wHjPTlsbRA8i7H5BPaOwqhwqhBrqpOFGD/950VsNdrc1q9QUsmM6LYghD8bwYdy4DJ/CIbXHkzIjfQzj8CcozFhllh+A41hFcJQ/fehaFEMBeV2kluxnWACmsxVC+gpe+sf0ms9U6siMVeJECGseZ2xSdFdkxmPLgMkA3KM4x/bRxYY7ErWh7lX7dUdbxj5R5GKP1tsuOSPEemVCxtgmFBGy9IhKW2G1VRrtqFGoBP7nrBQsCGCgc4w2oQI/76b+FK7SMUvCV76a/FQRWeDR4P9Xs3xDQcFjUklLjOfGaUJ/Ggqx75MaE4foOe7zLN1mKxUxDxb80YRQZG9ja2nD6+cPLTNjHyt9ji4zZ6I1WGZ0mApHC2oPgm6rldn+ogGql7dDKOwmc8ZgjXklJxdN2cCKtF+terEaJ57UIWVLqQzy2DmcOngYNYpJaz/foJdwzndIlcvHoNJQ0WAbezmyGCYSlwaPvHwgHd0T99y3hjKg7kAvQGy8Y85yJ6fFFpHYkpg+510donHsS8N57qQddD5CDnhZrB4uwdEqk+oRK9DUIM0Huqye5LTgfWyWXXo6tqAw4L0Ixzn7L639oLCE2ekvaOXuFUU4te/JAoIdyeVyBuvFG7CMUSs7dLqf3OHQxP/rb/NmF5eGWkft6OUWeABbp9VSGHgoy9Q2IfJ/ct0nwZcGlFP68aURtkASehEoA7H6JCiO1IuVUdioUbJ3jkT721TNymS8DsgDp60/8kcg/pE8oQUr2P76ibL/2sDXsUjZ33n8wFw4eqiQswzTK430VzOJeU3CTQ06wWiOnO6tUVX0BFC0qbfm8jY6/nTG7g73Ks4GD3bYWjD/pdtExc1UGipM2axDSj+Yb+TdgY6bUhFnj4Krh/KfsoonjntwwXRJp2fTcJHL5fipQIwJPv61OK7rcfExILcP+WKQaRvpqfiB3PlnG/eSfKXKGfVWcpJIUqwaIoofQ1Zw779xsWLI1EULBeCdyWm0ASZQN0cnmhiizy4jwi+RlhYiuRybYzwaz/pImiMGsng/AOEf/RklKHss6W76TgYzVGRIQpjEwEIYpkYh1GP/FZU+SKUFZ3DvBcbqDvPF2kjS+VEfrZmOOnMvuevhjncyEW9ljZ3+bwUTMcP68P8QhO7YSc4zCDBsQhaPetQjRGqQkipO8yn8be6Ai4fSZ2nxcSHm6QKfzzIxCCSLsXzN+RMC8vwFfAh3k2YiS0NBi82rIxkJVwkJOIprBbtVisyS4C9lFNdO57yaWs3mx9OAkG0JHmZj9SL9q5x3fApT/U+QOcY+3h6idqLQftwJhLfwg9cH0Y2bVKCuMR0Yikqg9hmInQ7MU0CAdz5jBCwNfq93Urk3kyRG5UKrkcwUf1GfVY34rq2baZi/u3+MgO6ZKsbYeielvKRIXY3At3Ny6734jMEdO5J4KvWxLq4xH3RnOAsOcwDjtBKCMH/QAxxwwhYekJ+WGg/1Mfay01+rdt7+e29xI/NGDPmd9/njyq/lJCZZDMml4f2QT5KD51mQFMLMYDjpK7WyMIA2+KW1ZqXQLbtH5ee0/XaErrv6M+LCgbffPTbRvLeJC72vMzsG/5vWvPzLtC3ILvDiZK5JXZ3PwTqImzGUSGUNmWMH/dHmVDO3IOIeFWwiwS3NIeOJuwBhIeumsANyRPYNXEBopt+c2NXwcuUYSEt5qTwONxBg+CEE5Q7Kkmk8qGJFly6XLXNktDFCvcSw5QfWtn77Y+CX0PwP90OUmqZ3wV9Zo3SRnl0wAie1g6W5X+IVZWXxS79+MhABe5+Z1cx64g1d8g/LHdiHdbv4Q+o6pwP4hm2wUHE0qn9eOTlxssnZzH8MFOxl+8t0w8kX6PbgHgaudFeSuuIaLUxbq7eiEw+SZ07yw3IxxAcEjubIYgigLS5SUl92S4yhbgSXAJ6yeyMswNpce5y3W/AsSRTYNaDsIxZfCVH4d9/uQO5f8N2gMSTFgJsWqIYxsoj5icA8w5CMPdS9nzob/lf4ZfGyVTU/L0ToRmRClHw3ZD30+DlhGXTmfTbimfkn7TS8fUL2oqn9xMhztrAKIsS23JO1A+tPl3I+tgub4xRlpdty73U/zmQPuZ/986QMsNlamB9Jn2bax+k3bpatZ2S7kdgJgzoSvBEg6OpLzbveuUOMy9t+mf9p1/+M96KZExHWenK5dAZiGMT7M5n+Z90zMHlneao9kJwfacVrlN//IBDqDeDHgMAOs/mNTPxdfML7fcTKczP1LikEdcnyLt09wvvL4/tiRAsyvv8Bn6cQp1Ug5VoUv08dldzb83fLk6V1h1PcY99XMEACC50kyeJYQQGbkkZOEufnp4F4URbB32nWvCHhNnLo8hZ0pWfXLl/g0NX/MdmYF0G//SUmHxdTN+e21C7+z2URuQhaoW9Xqf/tA36wBACy6b9E9tH9ake8A1YsWr5zw8vn+jov+6ATevCUnzPYZd9czMWT8uWbJw7hev3TxmYBvlQs7wHuebX/7ln1/+asHKjRvXrlwy5/3nrxver4lKl1okwQVKSB32G3PTa7OXbwO7qWbDH1+/cu3Ivduot73A7P+5RC96uKX6DeoFumQUZgHwMwPqteyyfee2DdO9qLX+NQ10GjTvts+QcRffeP+L73zwyWeffDDj9afvmHbeKQf36dKYEW2bRbjPR4ZVOWKlIKDl9a+yQINSrUUXqny6BstEaSZSbbHNWWXIMjtOlh1p7fg/+RCoX9uDMca0vVA6gaDkP0tTLZvw/ss7/X//8X9mQQAAVlA4IC4hAABwiACdASrgASoBPm02l0ikIqKmI5PZqMANiU3dPX4G60Bn3cK5Jn+kGIgbASVXSSX2q/iBbI0yfavzK8V8MHYPyi/sX7u+hPnY6D+Bv7V+1Xyn9Buy/Oo8V/RP9n/dfyS+f/oa/Uv/G9wD+L/zT/b/4//Ifs38ZfqD/rX/d9QH9Q/t/7S+65/nf+X/ofcj/XP9F+vX+S+QD+df4P/z+0P/wfYO/uX/V///uAfyr/E/9X2Yv9p+0n/C+Rj9r/2y/5HyD/zv+///b/S/8X4APQA/f/3PP4B+//t78XfxT8R/9h+Q/SN+02jJ2Yuw3BCPKejWpfGb/zvAi+2f9v1JP8Z6sv+54tdQL+df3r04PXT+8PsSfsR//1vMRmHxh8vDSTWgvAkgS1UL3UyJan4zO3ftjdZtlME8vyFVueoKxO5H2ilKF74oRBW+dr/BCgTaVeGNpmPJrxXu4peRus1D63bw0xbERjAIxHygTZKQ1XD8vyNTuqUJN3374e/jd7J28Kbwt2Tq8vZ0TFg1v301s7JPMlqKobj1gir88wrdf21JskFseGrpx1Sj0m8t/5kwdYuECpr5vMA+XhddOnQYtyf8KcK3kdDLm0n3SprQLKRlOYYs71G4jf0+jPRPlbupPJD/cn0v8irIZGMnO3epJv0Abh94fhzvujNUuDcw7/Jii2Nx+6hAREqKofq7EBPfwb4JsFUF3cFSAuzq5EDTnJLifRKHTv4hwAAPlfJi5cxeDFoxgxQToio30GpUzHm6wDAgiGaPIXvD8kBZWxxKUmcsTQS+laaHkeYBqvhvnXpgPIHrqDmt9Av5hgUxSDCCGccPDtwHiqAkraE2FEREGkFlg+5tXHyajuFzzv2MmJPSPTbzCYBafi2zgyI7hW+9sAuHfO0Wv0IURAqwUE4AvVaVSZKwe0zGHYJIcnQQ/HCL6bUzkOTuZ40Or52Pf4VAKJnBae4DKJFHT9UGYmn0VxiDf4KA+wWMp7raSF3+goGZ/Lmv4fE/S9HzKDDup7vTHSOGLkoeQBj6DqqujiGcm3NmoOSoMKGG6S0+dZNqOBkmSvbgC73C6q9nEXVwj/o1wWQjXQcvO02qswoQ4pDPT7pVWhJD/1no5NMB9uUzd0m62+c6+J4deB9pzxgDNBD8sJzM7eZQ4C32fnQS2+Z3TltGDRYm5kIfo7wObQT5PgNXynPYlk3o+/PlGguFykPUs4pgxAdMESEUgQHKW9gN1KvFEiboNvO33LqmsRAbPc3E6P4AHQc6Qk4spMfAD2muzMK3HKw+/1shQwk03PjfGkXVM+FiHBQvx2hVpl4ygUVE/hinjddX9XGU8I9uTQqn2QgCGFdzxGfamq/6nPrqPJjHZ+2IrvP8oD4ZDIAQsjsxwypLILoyu9XlZ92T+E6q8k4j0UvjDcf/a/3vVMak7vhUdAR5E0psKvBiQiBcoM+CozPmu/U/uDIV0kmUwAD+/W5JjcRlUw6FklJ37Jv3Ur4q7K5MVxLoiKim0bW86Hppj8z/94zzDROT0UXvzc2xDLDhz+NwAwiuNfOpaxpDtbukh6nALu5ytVc7g9jCnL0JDv46OCbAF3vsBDWSKUtENazwsgo/Z7DrJtsSBkV2qLcT+71HVygeN/nJe58tvvMsPgjQ/cm8OuCe4WW0SNXgpTt+Rkik8jDe+ovCb3AhzxcmgFK8cbY/AeQhCm0qWcNF3axEMq1RZ3Nu1lr8cAjrvMwhRvObpeILw5Qw8dwVxW0u8GhW2SaTtXloU6ChMSsBpMfjeWGogJlPq2eTflw6OipD02iEUpO1DbLvWgE8cMj2AyMif2CVLmo6B353hn1wJ2MojhB4ClzW3bduTNAcge9LjF9H2JJmLIU7UH7mpRiGpIxLYcbYntexq7jwC/+mA5h1j0Fz9Fb5P/XxWTXq8LI5X/CMuwym+aJAY/NpOSXmU+qSOCre7Xv8uu5EZBD/KZEh5pniYhx8ar6zNtqqEAEYih3PZWV5Z2hMRNumYOk+DFiSph3mnYpf9FV7qp0Ar9BVRXqnNJEZHZS9d2deRhd0ZImPdMuEYW4vI97B218bqURXHUR7P90llhGW9dGDLupcgF7KsIBCUC1sea4vt2EyIVJLgw1FXANFW3pH8PFIXXJrDvUTC0LyQcEvnR8dTcU5xxFPgjgkBxyawzsFi6trxJMEEXJH5V6H0SJMkAn+gN0tqfL5XW+LvztFHo7ImG+VSxo5JsXvBrGlIazp8fJzmCBNLVJdhSn/k7c2S7TABEG74JzqkneCSpxxuD6IC7eyQg6/ZqRjcziCFrb/3oVUTGKixd7Eo0kreB9BQd863LPL81hwbjWlUr96WX+7PnW830ouxcHkON7X7DCqDJfstxalQT8mevAYi3vg6URVAo9gTL/DGf+bndu3LLs845Mq1ZVVQfSDbNsLv/VBqJWq3vJZ5vP6iYNWhO01g3yyclwHHHU/U70Wnq+TYa5VG9MIV/Qn9UPKT79uaxCaYjzoS6OpA7fyYkFqQWsgv7VsEyDjO/NkYpVeFWH1uNVKV5jQUJcxGTPVCG+wWm5XlN2vlqTYFXF3bcQ77CiE0+XaiRc8df3RMBgSY5ZjF3EM5bMDaJ+RV9g5P8XDHa5BXlZbPf+w43Kk+Gzg3pObU+cOUMm4gdMF8zfgPW5IhjkwuvUW8SD80H97+mutzX+ayPNVjIOCqoMcdVERhAEmiz+iWzorNXZWTueWgNwO+l4N/+L32Sdvn0K3qedCqJ2gX6un6vJlKy2grYN761dDa3t+2koBAfoTCtqtVlZ79pAGhONrGTx3+PYKwjJVD9bd344hkktnKAsumtEkqWgU+Vz7VMKAHiS0SzTTg/jTTr3WM+2B92XWfaZEgCjjawMFqW+PkbvFwhFG31HR7aHLFb/8zq8omkjjgxZmDMdFdfkxwTX1UAS4/ZOf0uvB0sveP67tWKXgYoZhslTOkspB6UXo7nuEPjx2n0HTaMd+yYuP3KGUL9btUlsqgzm2LQ0kE7xeuxU+LthNO1dS2rRDBnSL7j1+WaQpeS6RqJen0FB1lPoQs+6Nd907EyLEsBw7D4QvF5K6giAfaZza2uRXKOEL4TpoZAYIoC5CxHhgS5gU49gyGE2rv0/SqQH9bj5C5nXHmPkHceJAUyrE4ds7/FSddHs3OdNh8pUp+eCmRzdYOp2swlXyZqv1Tx3Zn3xpAKSV11XRn7XXTfhEInvPHOOVW7+hOPXI94AMjdOz3fydf5F3qznpNxVFPqhrInFSqe4uRgEnVzVnNkduLVhWI9uMNEFL3R5HUOfQt5C7qXIYPLRICdMXijQTMfLQBB3rlVQjSHjovT+BxqBUY2dknoA4a+8cMhW7bGDI8RTWnJGXAViPc8UN1THa77C/PP390n+OSV0Q8l69VUcSqAN4sH/TrccMwa/u2cIt+MhBQvtY2mFFAGtA19tepGKKRp6fUzQ1hoTP8zZNOrpQe44sX9MC1dyWIUVpwwDGiVYl5YDa5fpgX4vzO3zxa80esHpy5Ghf42J8jwwx9wAUOFLadXQjNj7EfBeCunFynn0O1ZJSiqqtGIULkwpzKtjmrXbWzb/ct0beVB48sCXXfox8bBE+mHzIksMoSVQpjHDs09aomCUgwNQ2a6YG7vX0Ke1vcij3hfMAldf0JFnuo8uRAAx3OdtEbqLW7i9ZWX2P9ePfCQv0JzLUPt+bBjWedlhrk3oK586c/+OmPrRxi3uiHDeJQ7rUnizeBTeXjLsxyJe8OQJlq08VZk0yaYj7WX8Z2onINcuVMkzT63ju3KQa30LmMCiqARSY1LHcyt8NBU5Gt5QuazWJdp91PzcFRiOB58XqEYGPAD4zU5BrHNkGBh/YEoweNYmbGE110QsUaywTV2xnF8wctPrL3nR0UI2E4QZJfL5Oap1lEzZXVQyxSo/fTqJibdrryR/A3f/dsn44+Rx/iSVkbBUqZsmO1mBvTenzOcdLn+yHdER0irZoWvEmP4wDy26tEcAFD3MVT6JJRQEbwX6PL1hTElgRoLgAqDXNufEY6vjhYLtE2bZYq0y0Owen0+HI548PaeRCcRsj3THd3DH1wzWXYo3Btj6zFHXoPK54eG9uwc5JeMtkYrORqZcKw1pGw6tAg2OSY4igoXJrnqTcq1uOL0GytNdablaoMYInOyqKZrHYQWen3OtMZ8PYDail7INJeFzsjfLVVSOR4n6LQL6AYtswHm2l5AYJR23kLYXq+KAg/l+sym1UHhmSpAX3wc8SYoP+Sw+gd1UBR+0Net7wnOxCuLSC/vopmfeSGv6YwVAfQUdbhAsjrtE2wqLhoN4Ka5C85Ki0hB6yt/fERXUSilUqUucq4/JO3imI1eWeeLMDSUYI66xW4rLespICXoIjrSP9gTJIG2A6re3M16xzTGHC0rpHfjPPsMPR428oNOobXd+Coec1XwT36iBD45kkm/7auitPzueX4CFmZJ0MPBoQkxTWhKVjcLzLiEQw1Gt0BCyVyC7JtZdFsbbZbYsZS5dMfmUDl+Jgvn/qgDEWZkMRd42TsjM5VMAbfbShGUs4AFaecZu8U/PgHyELLmDWMG0kMXXoe1RhMLaWyaGQoPYRiNMTw1hmZ6lRLSnCfYtixkFJ7IiGWNzP0oN6PZeJc3mEGcxji58ahbZfqG+owRgAiNyNUJlQYe0EZgyBq61pVziW/dIRzxFIBPXxPNKXxZHi8+wsWEDWlgD6t9xlHArrVX3cBAkqf2Zt65GV4yFXaaqDTH7DqNDbOWlb/sbfXna6sh6scwBAtzDyzsNHbKv25LZBzB8zriLam10k8bCa8nOnKH5HDIULoevIqLN0keBm+Q9lLkygKBAu8fElINnAdipJb6NHZ0imuJyHxt1GAU9pHpqct6J1XPAPLtwBIAClQX6/85BdlUovj9DZJDWk8ldwqpJK21BwXQXWRNOl3eDPAz4THE1qKK+1UaL5Q9NZtudWe/teI07xoOjx3vURaiFA1tPtZX2aXLhuVwDpse8QzX8QOzS0D0B4793rutMnyDp3ojYSazdwYXHBFrkLlXvuzkKYgF3JQdxOaDXHqS/2neHTnfuGZVfErja43n4AiH3alV7oYW1oObYaEA2t6I0fw3Ay87tgfSBs1aNtk/Z9p8AS6k35lTcPagwM0HC0D2dHs3n8ei6BOtRnB7jFOvgUCkkdbEbY7UOodCgtqOMMqszdpRQoLbB2b7c/tVnp8cf7jOrbWBtALwX1YkVz5xt6IIgT9myElyrmF0Xpr6BYuitJrwj8+5rHHNfXUw4VZwSw8NIP89Y2fWaIyMxJOUYfBMZexsZXOLSeN/Wul1jiwoiWMQ1YuTH6VbXRHlDibN84NVpOiQwPEF9ZXe8vQBDXAueQKHZDcl6JAdN0VEEVoRhqD6ZsyLo8eD0lxUsd4pW3q2hntpLUe6KJ/CewYiJAZ9BrqfsuLoW44ZtAT2n2MNxQbcir+aOV53p9E9JXslVRm1sGXk9sNNggMJ8tG3m+nQsLpzml96H2NqtV4drw5tw6BEOi33HTga3lgamF61Dxj233OT4GBeFDuiacVDTTjxRZnM2A2PtmlJGfgXq8GrJDSSsvOTweumKbTU0l4+t9lAh9oNl8jRGsSymJMeMrsqg216++R4M1GNGsmMZRqN39igGbYpEXNU4KM9Hd3YktU38sifpWzivXtIABIe4ZN38OL6tZlaOIfFVcyl8/NZKHSxO+o0UgASttMkuycrgCaI/n+XPH/kgDxZeGU+S0fxAmJVw24eAi5VV813t/HmM3zvAq+CwS0SY+EkMIea/hMqEeXKhJT6TJBzyIrIXNqvdTmARH9h7mfVrWuBUIDS8za6LeYEQtHgXs8uO4x7ngwaqjJIllNrt2dAl9JPsdgvoaNay7jMvIg8mMTs7fkMEw5TV1OOeAqILv5bZd3dP4kEfyOTGctiRt7hHdrRYiP1mkFg2sOwe7azKRiUKJ2uO+9Dz4wJvl6IapBFKlJNqhNxOBBJCiHJq8UABVq2Fys929XLhqlTICsmLQqdFKblDbaRrLRC3UlNIJuaMgiN2+nEPGV6dfDkYKGQMMBlh0kckpF0pIzeJz8gpUrzKgNDeJFOiMHxnHUK+L1uTbatCXXSjVKqThzbEfZxbRH+Aj5XEPrFZUSkmuisaTBNPKfcPhrMCtQXZcR9K1N47jwPa+ATB6UmABoSILF1mdycGNKLLkQn6qzeCMpzuRWJZc8JCajmX/t5uFak2EwXTI7vtH0G83hW0+hk5gPvgm6yA8Yd3ehWQstbP67Fhe4gHlOVDi9fzRTjvtR8F36i7ZXp9e4xPVqX4RYM1F2E98gH+6nzpp0YduyOQMTemmC7V2cwgu91f5QVOLQH7p2nBZmeg2bhi1ysVPq8lhrWsoTGDCidRWNZ5oZYxf78iAQHO6X/qMv4ZYSW5QZtr9TvuD4HpJz5z6P0lWjC1+mQIC3Hp+OtCGp9mpD32aDPIXJUD0WXsL5+s3M6dLRRx9QL0t4odxvT0xODV6s1gCE0ks62+Z9qb+HEL7Abo42/qQ1M4h34+l2QQDfOZ2VUgSvXZzvtXZNvw7QKwxKMVmbIAKh+4ysPhbeUXX6j6OKpjArhFEcjBMBFFutUALZUGnoIOIkkq07YXKSKJ6NLaQoIloMqc6zDnKndbfiAUb4tTAsUDZJqZ4H0xDnruw53vWh9P0yncYIdrk4Tbh3dPuVPM9OSWo6t9MQ6cdekIX5cPjZq6veNJITi8Aw6uBSayYrztb/EX0hWztmASAnWc7msnQLaxt8ESUfEZS2DMhnPvBU2C1MuL0/7HJ+p+nOBgHfdFCgiA1D5yLXanA295j3HvM3scI1bGqhRMyqbKEGNO1HT5CwQmMBVf5guTBVE4hyM/z0KizlW4Fv2CLzTvr10OTmcEyEj6qmRIPQ+xACbGxEm8PZT3dC2I4ebk8oRPuBiApDM8+2u76gGy10u8IsFxa9xQ2D3gduQbf8DnKiS5m+ooO3mrIJ0NfJALHoyi5zVS1r4n4VF39JO/umku6xwytTFpO3GwBOc+CMrJWFMroHuU6BST/NROLofZZRLZnFZBOaACz+XaMpENgFQXG9cNR0cdBS/yKTABPWo9JcFydN5Sl/T13MM378soVdZwVDSDAnMqvMwHlSHg0DbSkEyD+5eFchrhSLl+IjG3owB/jY/Rex4zY4Ze4ThW4ypis7MkS5ufi/woHYW6D8d+VjRLABxZrnJDsYKBy/dymMbNV1PS6dACFlZGXU27gtNPae9k+91hh4rtDJJd2uc17rDjgsJ4qj000zFgo6uXb5wI86LZwedDsptjjIubmC1f8EDc+pdKPEkU8XllWJhELRelYAXpFcvsr8HGaBH+6HLHvlZ7NBoPo9uIXAzpWYSOhW/x8elts8rAu8dFmlnxgQg7ZKPQxySS68+ke4l36dzWG//uHYkvy+4zgVb9XcsVxC+zponbfwWKbfEx5oPjO70waGL/WQLgpPOH2jDJ6zhcU0cNlbotcHSfCCfQEw4/XQ/halpS3k1OfD+lV57Iqp8o021RWacjkRZEWyVYD0vCTymhoZLjNl9NC/FuZKPx523XuZ4QyrOci17g54NvS9cyYsCjYLErdlqm53S1II3+beBCDosvA/+6maGi9Hb0d5SKYB/FqGUVHLiMovWf/voBJH7EgyFv/wi7v1X5Bq2KWClpN8OzJGLb6sI6CnDC/WiMnV+pkHtcrzhMY6EPegDImtEK6mPLaJAAzd2AM8OwIASQoxnZTaoPkS2FDInFVABw8QXrDnbSTv6H5tihSgqrQ8Osu4hogDsFbVJafLdmAefTpMjl2+4RX3gNf2wKftjHbGnSlRDauSgsPJbEVJ1y/9b8k4ZkLIK9Ha+TYU3cYkJDI95Zdk9jceU9kHBcoIvzKHSi/Ci7/8Z4jfai5JgpN+xgKEXN6Lc9csFwE4NdPhfGejZKbME95hARXCO9wJhLnkSa9mLLD/OQFmyRK9QbNBFeQD4WaeI5DGSS+EAnVnUPxRTYgHyX/couHBNurfictqz8rv7Tg8X7joiajCjThlP0/2cOyaPdxE+ZXJQnwwBku3QctSZVssqBw53Z0Or3m/4WjXqU/pEY55nPKByIMUh5KBW+xlnKWqckcG9m/vKwbHCxj1qgGpkUaX+4PPgkJ/V4s+QW2z4gmZm/GmEBu0F021eVVLJNIZhOER/DBKcbp2HD2hvIHxKIBx+pPHPfmUJLPfa0jbtyo5Mqse/4mjjsrhJEcFoJTFhMOsXL5U3TQq2vEdXvJMWLi15mnZXX+7OLwHg9tWvrTkhz0EOQ4jOaJGsM3dbCOpGNMRhwJG3LC1qjrdn3opC4mbg7MSNhRRPpIVHEHdZm/sJVSwEv+Z4N8FFZ8UVncT8KPlImOLAjYy9hj/rQsu2GItWROSg4PQhnFlV+nYCDbWA1y9NqeRY45B3P1BpWQkZJOgMoeuzk47NLtaqCE+ly4DWGoAcvQPuexfcHZ0wUSGyi0scHR0ESAf67ZiZGaH4CEKfxECetEefk6oU5lXD9FrXLCWc4mWkw9LgNOtbWxtxsbEegWEoGwIjUiWnIBwhWWqQU+K06bB+2YrFzoxh/3r+8guk7Y3fw7QoakxszvEvfGSfqkB4Ve8XPPm84qhTbZsH+tjTj4AjSTrZ7fWp2Ee5U0GQBVYdAFVn8AdHrLfunHXWJYNH9a9PEzjoTXjfAuxvLaiKpPiuGT5wqtOAtV9WY9ybwB3YDfoDrzvs46q1/T4VBwIKsQtYfpbDxRsQ01Fc37ZDcawnuIjb/WV/NeQmCvtALRJYS3G47O4dOtgh78TN+Ki8xRLQ5vmBKPHmiqudIKlH9o9AXUtOtJbR5vpLKyiVf4vtEwd4LQ65Nte86HTVYbxjNY8xNNN+tuRAEhKkbMFz3M4FG+YtlnoyKlk4PgHAuVLvFb5ab8PxguQmLcvmcY/VIPyRs4iWaRPcpoZu9rndCtxUTAUJyoI6ikbdiZFNGieztFnj7Ce6vsszNWVE1JkNjDBcK1RBAII7WaT9oC+VfD7EEls6n+xIJa+3KLsek9NlF+e/D77zjg9TtWNnP0K1M5ptXPJAe/G+j4e8rB6V/Hr5obT0GXS/+zFkA5AqzFvkWtNyg1lGSHzCK1bxE7eS203gz97LbhxcyMLXIl6v3jGc5WgCXLIgNYBsaENPTxUxxjf3K/fREMM0ZLyqjQM/Bqkw7p8/TGauDMoViDJ5L6IafrMVkqPWgxUE4isuUTTngDGriFFE2EMI+PWBS8Lr6nR5ICsTcd1tnFlV7NZZHMPrP0ykqpB7ftDsvQInZDk8Xi9S5sLK+qEvoOYhvEEUFc4AtrQL2Bx4jf5RrZDqHAxnxNpgIykjsBJW2q9kiBkZ+PVGTBYWTQPY9gS5kTq5aq0udHjyAATfnhl4KMJUI1sIpj1KrjRnl5WTSB+G4EDXJsrRLqRQYgAPp8ZeuVicwCsgdpXUkXYqPPTEPHcSFighBhp8o60wamvMzAX5tyejaltkvWbjRtdMBUh4MvpSVO4OgGyShzhWS49Af3H3aURnAAdTrb0J42xZo2UpELxkMmUJdRFhStRt9EPXDU7IALCLq/uepybYYYmvX4zTfi9qVaqDIUQ/p1o67XJlys+bdQ5/M5P+oXTwxCBbh1eqz0FXbXhOqWnNeOqYH8V0OZhexVTqf/R//9HFV7LwIdLjEY2wk9+6cvUzVwyry7TfkZawcdBF2Obuhi6KbeUpYJdr+8nzGAAPlHYkN9HuZ/ZK3eiQLzogRSXCkOMA4fjIr0L5Qx6UIZytQ6JuETXgeqLlStPjPi4V8aErltZ2S/uNruzmaCTPAgcluTRYuaCINAOIeoGqCs1Tp31v08DTsPpU+7rKoWIMiATDJt4MR/FD8QBnTzNVKi2Nkpxw2TITU/7aUjdlKU+l8u1CmiZ9YvaSk4Mbxgx2EP5xm8bUicRMOI/77qHtbodGnW3XwhXOpMRm82s4NQaUZoIc8UnIZxc8aNCJGTFAenrFSFLAh3mRrelXrxP7xN0/c8FbM6PoqyjT69TwtaSQwyI6AzwdLmob873qFItIU5APWQz9zE18USjcfLHf6/Goc+RkzvXgKrpJWAv/huzZ3dp3veSqnjm0UouP2o/NfksL92G25eZXxh8i7PGjc/T4YTYt16Es3vdSxf1I+CJosrjH2aaR8AlkF3t8gXqHXauKFq8qpegdr22/EmTCDeG5k8XfOMBFaglWjrGQALKiMobF8uHrv0WAZ2/R+mbsKgoSK7ubWcmY5vgiDoek0mGjRD6spZhvR9nFGWIFPBxE9KTjKPsOFj3yq0dPfwGSDQPQdnRXmQdouKXlVVJl73JqvKBtSNUn1hvSrK2yPceeDt3looRosjVD7tqWBbRYEyp8WwVDYmz79heTk8m/XUbXPKHetTS2hzqSj30/xMXmhH8SVd6vsMkEK5onZdNJIuzL44DaNM5Pu6zFFvJNJVGq+zFYpn4/HIz4OXh4hwO2jIOgOTUEc3UxqyjbXW8mg/3NcZAZu4F41xwD6r+kflV7T8xGXGFuJLlYjcylV/nMy7WTF1h711ZEn0yjgu7zRioK4BydUs47WPrRoFx0ZXcJY31QUfT1MVAV1QHZwGYh1zaV6A8wm7sedtMHq2RGAAID/2+LrUBCS9agaqdZg3k1VhVGO6dGiSD0m+28xaSokwsWU7A922s48a1DN0NcdeZXdCoN8ZXcDMFY9lpYP/vKlYRtWdbXXODBrtPAp7+TTn0vlHT25adSrFxS/XrBNy5xMxvNr9wZBePN+ybsJlD++haAXhy/Wqv8CxJsaEPDFUYzWpsAaT+LlonWm7uXJkE9TRczJ8UAjhtb55g+NucZ7BMOCqD6TZe9QP9f4KJZvsSAmP35E6LYJVtrFkWINanAvrcIoF2wHInFSfP/vKdOLNwxByRN4bvjvuUF0mfGqXOKdWlshbu7gq4gutFkSAdkvTBSpFytz6BuIXq/fafSN3nvl/E0DhYQGz37ubg7g6nVc5sm63ezw+kmPtkFUuP0/8MF4PufGlYk7kfio5zHR0PKix8z08eHLAABGssY69zEeauQa9veRQKkEBTmtxIrea8S3vs5niVQGyVRY1jlk3skKXEjZmqeyv05tzJkUxzeY8dQ4WqV7xiFjtz0qHHxpJwmMOtIzqi8JzIPr8mRU32mPJ2WpMBK6TDiuc7tyPiURhjRZsvkGSgeBb0q0jWNV3GHHlIZruskLJJie/M5znddziq4byU2i5lDNvbR6dc2r+1RCJzyn9fD8K8Te+QFMaQvDG6kAAAAAAAAAAAAAAAAAAAAAA");
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:96px}
+body{background:var(--ink);color:var(--t1);
+  font-family:Quicksand,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:16.5px;line-height:1.62;font-weight:400;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--judge);outline-offset:3px}
+::selection{background:var(--judge);color:var(--cta-ink)}
+.shell{max-width:var(--max);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+.mono{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,monospace}
+.skip{position:absolute;left:-9999px;top:0;background:var(--grad);color:var(--cta-ink);padding:12px 18px;z-index:400;font-weight:600}
+.skip:focus{left:8px;top:8px}
+
+/* ── nav ─────────────────────────────────────────────── */
+.nav{position:sticky;top:0;z-index:100;background:rgba(11,11,10,.9);
+  backdrop-filter:blur(15px) saturate(150%);-webkit-backdrop-filter:blur(15px) saturate(150%);
+  border-bottom:1px solid var(--line-soft)}
+.nav::after{content:"";position:absolute;left:0;bottom:-1px;height:2px;width:calc(var(--read,0) * 100%);
+  background:var(--grad);box-shadow:0 0 12px -2px rgba(255,90,0,.85)}
+.nav-in{max-width:var(--max);margin:0 auto;padding:14px var(--pad);
+  display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:inline-flex;align-items:center;gap:11px}
+.mark{background-image:var(--logo);background-size:contain;background-repeat:no-repeat;
+  background-position:center;width:34px;height:23px;flex:none}
+.brand b{font-weight:600;font-size:19px;letter-spacing:-.02em}
+.nav-r{display:flex;align-items:center;gap:8px}
+.nav-btn{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--t1);border:1px solid var(--line);padding:11px 15px;line-height:1;
+  white-space:nowrap;transition:border-color .18s var(--ease),background .18s var(--ease),
+  box-shadow .22s var(--ease),transform .12s var(--ease)}
+.nav-btn:active{transform:scale(.97);transition-duration:.07s}
+@media (hover:hover){
+  .nav-btn:not(.nav-cta):hover{border-color:rgba(255,122,26,.42);background:rgba(255,122,26,.07);
+    box-shadow:0 4px 18px -10px rgba(255,90,0,.6)}
+}
+.nav-cta{background:var(--grad);color:var(--cta-ink);font-weight:600;border-color:transparent}
+@media (hover:hover){
+  .nav-cta:hover{transform:translateY(-1px);box-shadow:0 10px 30px -10px rgba(255,90,0,.65)}
+}
+@media (max-width:640px){ .nav-hide{display:none} }
+
+/* ── masthead ────────────────────────────────────────── */
+.mast{padding-top:clamp(46px,6vw,90px);padding-bottom:clamp(30px,3.6vw,50px)}
+.eyebrow{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11.5px;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--t3)}
+h1{font-weight:300;letter-spacing:-.045em;line-height:.97;
+  font-size:clamp(38px,6.4vw,84px);margin-top:22px;text-wrap:balance}
+h1 .hi{font-weight:500;color:var(--judge)}
+.mast .lede{font-size:clamp(17.5px,1.6vw,23px);line-height:1.5;color:var(--t2);
+  margin-top:26px;max-width:44ch}
+
+.plate{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));
+  margin-top:clamp(34px,4.2vw,56px);border-top:1px solid var(--line)}
+.plate div{padding:18px 20px 18px 0;border-right:1px solid var(--line-soft)}
+.plate div:last-child{border-right:0}
+.plate div:not(:first-child){padding-left:20px}
+.plate dt{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:10.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--t3);margin-bottom:8px}
+.plate dd{font-size:16px;color:var(--t1);line-height:1.45}
+.plate dd b{color:var(--judge);font-weight:600}
+
+.acts{display:flex;gap:11px;flex-wrap:wrap;margin-top:clamp(28px,3.4vw,42px)}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11.5px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:15px 21px;
+  line-height:1;border:1px solid var(--line);background:transparent;color:var(--t1);cursor:pointer;
+  transition:border-color .2s var(--ease),background .2s var(--ease),color .2s var(--ease),
+  box-shadow .24s var(--ease),transform .13s var(--ease)}
+.btn .arrow{transition:transform .2s var(--ease)}
+.btn:active{transform:scale(.985);transition-duration:.07s}
+@media (hover:hover){
+  .btn:hover{border-color:rgba(255,122,26,.5);background:var(--judge-dim);color:var(--judge);
+    box-shadow:0 7px 26px -13px rgba(255,90,0,.75)}
+  .btn:hover .arrow{transform:translateX(4px)}
+}
+.btn-primary{background-image:var(--grad);color:var(--cta-ink);border-color:transparent;font-weight:700}
+@media (hover:hover){
+  .btn-primary:hover{color:var(--cta-ink);background-image:var(--grad);transform:translateY(-2px);
+    box-shadow:0 12px 38px -8px rgba(255,90,0,.68),0 0 0 1px rgba(255,161,0,.38)}
+}
+.btn[data-copied]{border-color:var(--agency);color:var(--agency);background:rgba(95,216,188,.1)}
+
+/* ── the rule ────────────────────────────────────────── */
+.rule-band{background:#F4F1EB;color:#14130F;padding:clamp(40px,5vw,72px) 0;margin-top:clamp(38px,4.6vw,64px)}
+.rule-band .eyebrow{color:#6E685C}
+.rule-band h2{font-weight:300;letter-spacing:-.04em;line-height:1.04;
+  font-size:clamp(29px,4.4vw,56px);margin-top:22px;max-width:19ch;text-wrap:balance}
+.rule-band h2 .hi{font-weight:500;color:#C93B00}
+.rule-band p{font-size:18px;line-height:1.62;color:#4F4A40;margin-top:22px;max-width:60ch}
+
+/* ── criteria index ──────────────────────────────────── */
+.index-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  margin-top:clamp(32px,4vw,52px);border-top:1px solid rgba(20,19,15,.15)}
+.ix{display:block;padding:17px 18px 17px 0;border-right:1px solid rgba(20,19,15,.08);
+  border-left:2px solid transparent;padding-left:14px;
+  transition:background .22s var(--ease),border-left-color .22s var(--ease)}
+.ix:last-child{border-right:0}
+.ix .n{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:10.5px;letter-spacing:.14em;
+  color:#C93B00;display:block;margin-bottom:8px}
+.ix b{display:block;font-size:17px;font-weight:600;letter-spacing:-.015em;margin-bottom:3px}
+.ix span{font-size:14.5px;color:#4F4A40;display:block}
+@media (hover:hover){ .ix:hover{background:rgba(201,59,0,.06);border-left-color:#C93B00} }
+
+/* ── criteria body ───────────────────────────────────── */
+.doc{padding-top:clamp(46px,5.4vw,82px);padding-bottom:clamp(46px,5.4vw,82px)}
+.crit{border-top:1px solid var(--line);padding-top:clamp(30px,3.4vw,44px);
+  margin-top:clamp(34px,4vw,58px);display:grid;
+  grid-template-columns:minmax(0,.34fr) minmax(0,.66fr);gap:clamp(24px,3.4vw,56px);align-items:start}
+.crit:first-of-type{margin-top:0}
+@media (max-width:820px){ .crit{grid-template-columns:1fr;gap:18px} }
+@media (min-width:821px){
+  /* The criterion you are reading stays named beside you. On a document
+     this long, losing which one you're in is the failure mode. */
+  .crit-id{position:sticky;top:96px}
+}
+.crit-id .n{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11.5px;letter-spacing:.16em;
+  color:var(--judge);display:block;margin-bottom:14px}
+.crit-id h3{font-weight:300;font-size:clamp(28px,3.4vw,42px);letter-spacing:-.035em;line-height:1.02}
+.crit-id .plain{display:block;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--t3);margin-top:12px}
+.rule{font-size:clamp(18px,1.7vw,22px);line-height:1.44;font-weight:500;letter-spacing:-.015em}
+.crit p{color:var(--t2);margin-top:16px;max-width:62ch}
+.crit p.tight{margin-top:10px}
+.crit b{color:var(--t1);font-weight:600}
+.pf{display:grid;gap:0;margin-top:22px;border-top:1px solid var(--line-soft)}
+.pf div{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;padding:13px 0;
+  border-bottom:1px solid var(--line-soft);align-items:start}
+.pf .k{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:10.5px;letter-spacing:.13em;
+  text-transform:uppercase;padding-top:4px;width:58px}
+.pf .pass .k{color:var(--agency)}
+.pf .fail .k{color:var(--judge)}
+.pf p{margin:0;font-size:15.5px;color:var(--t2);max-width:none}
+.aside{margin-top:22px;border-left:2px solid var(--line);padding:4px 0 4px 16px}
+.aside p{font-size:15.5px;margin-top:0}
+.aside p+p{margin-top:11px}
+.aside .k{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--judge);display:block;margin-bottom:8px}
+.ev{margin-top:18px;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11px;
+  letter-spacing:.06em;color:var(--t3);line-height:1.75}
+
+/* ── application rules ───────────────────────────────── */
+.apply{border-top:1px solid var(--line);margin-top:clamp(44px,5vw,74px);
+  padding-top:clamp(30px,3.4vw,46px)}
+.apply h2,.extras h2{font-weight:300;font-size:clamp(26px,3.4vw,42px);letter-spacing:-.035em;
+  line-height:1.06;max-width:20ch;text-wrap:balance}
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0;
+  margin-top:clamp(26px,3vw,42px);border-top:1px solid var(--line-soft)}
+.rules div{padding:20px 22px 20px 0;border-right:1px solid var(--line-soft);
+  border-bottom:1px solid var(--line-soft)}
+.rules div:not(:first-child){padding-left:22px}
+.rules dt{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:10.5px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--judge);margin-bottom:9px}
+.rules dd{font-size:15.5px;color:var(--t2);line-height:1.58}
+.rules dd b{color:var(--t1);font-weight:600}
+
+/* ── rating ──────────────────────────────────────────── */
+.rating{background:#F4F1EB;color:#14130F;padding:clamp(44px,5.4vw,80px) 0;
+  margin-top:clamp(44px,5vw,74px)}
+.rating .eyebrow{color:#6E685C}
+.rating h2{font-weight:300;font-size:clamp(27px,3.8vw,48px);letter-spacing:-.038em;line-height:1.05;
+  margin-top:20px;max-width:20ch;text-wrap:balance}
+.rating .cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:clamp(26px,4vw,64px);margin-top:clamp(26px,3.2vw,44px);align-items:start}
+@media (max-width:820px){ .rating .cols{grid-template-columns:1fr} }
+.rating p{font-size:16.5px;line-height:1.65;color:#4F4A40}
+.rating p+p{margin-top:14px}
+.rating b{color:#14130F;font-weight:600}
+.stamp{display:inline-grid;place-items:center;width:112px;height:126px;background:#E8E4DC;
+  border:1.5px solid rgba(20,19,15,.2);border-radius:9px 9px 56px 56px;text-align:center;
+  margin-bottom:18px}
+.stamp b{display:block;font-size:37px;font-weight:500;letter-spacing:-.02em;line-height:1;color:#14130F}
+.stamp span{display:block;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:9px;
+  letter-spacing:.16em;color:#6E685C;margin-top:8px}
+
+/* ── licence / adopt ─────────────────────────────────── */
+.extras{padding-top:clamp(46px,5.4vw,80px);padding-bottom:clamp(20px,3vw,40px)}
+.licence{border:1px solid var(--line);background:rgba(244,241,235,.025);
+  padding:clamp(20px,2.6vw,32px);margin-top:clamp(24px,3vw,40px)}
+.licence .k{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:10.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--judge);display:block;margin-bottom:14px}
+.licence p{font-size:16px;line-height:1.68;color:var(--t2);max-width:64ch}
+.licence p+p{margin-top:12px}
+.licence b{color:var(--t1);font-weight:600}
+#clause-text{font-size:15.5px;line-height:1.7;color:var(--t2)}
+
+footer{border-top:1px solid var(--line-soft);margin-top:clamp(44px,5vw,72px);
+  padding-top:clamp(34px,4vw,54px);padding-bottom:clamp(34px,4vw,54px)}
+.foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:flex-start}
+.foot p{color:var(--t2);font-size:15.5px;max-width:40ch}
+.foot-links{display:flex;flex-direction:column;gap:11px}
+.foot-links a{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;letter-spacing:.13em;
+  text-transform:uppercase;transition:color .18s var(--ease)}
+@media (hover:hover){ .foot-links a:hover{color:var(--judge);text-shadow:0 0 18px rgba(255,122,26,.55)} }
+.foot-note{margin-top:clamp(28px,3.4vw,46px);padding-top:19px;border-top:1px solid var(--line-soft);
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11.5px;letter-spacing:.05em;color:var(--t2)}
+
+.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(14px);
+  background:#F4F1EB;color:#14130F;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11px;
+  letter-spacing:.12em;text-transform:uppercase;padding:13px 20px;z-index:300;
+  opacity:0;pointer-events:none;transition:opacity .22s var(--ease),transform .28s var(--ease);
+  box-shadow:0 18px 50px -20px rgba(0,0,0,.9)}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+
+/* ── print: this page IS the document ────────────────── */
+@media print{
+  @page{ size:A4; margin:18mm 16mm; }
+  html,body{background:#fff!important;color:#111!important;font-size:10.4pt;line-height:1.5}
+  .nav,.acts,.toast,.skip,.index-grid,.foot-links{display:none!important}
+  .shell{max-width:none;padding:0}
+  .rule-band,.rating{background:#fff!important;color:#111!important;padding:14pt 0!important;margin:0!important;
+    border-top:1pt solid #111;border-bottom:1pt solid #111}
+  .rule-band h2,.rating h2,h1{color:#111!important}
+  .rule-band p,.rating p,.crit p,.rules dd,.licence p,.pf p,.foot p{color:#333!important}
+  h1{font-size:22pt;margin:0 0 6pt}
+  .mast{padding:0 0 10pt}
+  .mast .lede{font-size:11pt;max-width:none;margin-top:8pt}
+  .plate{margin-top:12pt;border-color:#999}
+  .plate div{border-color:#ccc;padding:7pt 10pt 7pt 0}
+  .plate dt,.eyebrow,.crit-id .n,.rules dt,.licence .k,.aside .k,.pf .k{color:#666!important}
+  .plate dd b,h1 .hi,.rule-band h2 .hi{color:#111!important}
+  .doc{padding:10pt 0}
+  .crit{grid-template-columns:minmax(0,.3fr) minmax(0,.7fr);gap:14pt;
+    page-break-inside:avoid;break-inside:avoid;margin-top:14pt;padding-top:12pt;border-color:#999}
+  .crit-id h3{font-size:15pt}
+  .rule{font-size:11.5pt}
+  .crit p,.pf p,.rules dd{font-size:10pt}
+  .pf div,.pf,.aside,.rules div{border-color:#ddd}
+  .aside{border-left-color:#999}
+  .stamp{border-color:#999;background:#f4f4f4;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .licence{border-color:#999;background:#fff;page-break-inside:avoid;break-inside:avoid}
+  .rating .cols,.rules{grid-template-columns:1fr 1fr}
+  footer{border-color:#999;margin-top:14pt;padding:10pt 0 0}
+  .foot-note{color:#666!important}
+  a{color:#111!important}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to the criteria</a>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="brand" href="index.html" aria-label="Millesimal home">
+      <span class="mark" role="img" aria-label="Millesimal"></span><b>millesimal</b>
+    </a>
+    <div class="nav-r">
+      <a class="nav-btn nav-hide" href="index.html#checks">The seven checks, explained</a>
+      <a class="nav-btn nav-cta" href="index.html#ruling">Get a ruling</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ══════════ MASTHEAD ══════════ -->
+<header class="mast shell">
+  <p class="eyebrow">The Millesimal Standard</p>
+  <h1>Seven criteria. All seven, or it <span class="hi">was not a qualified meeting.</span></h1>
+  <p class="lede">A public definition of a qualified outbound meeting, written by a party with no stake in whether any given meeting is booked.</p>
+
+  <dl class="plate">
+    <div><dt>Version</dt><dd><b>1.0</b> · September 2026</dd></div>
+    <div><dt>Status</dt><dd>In force. v1.1 in drafting</dd></div>
+    <div><dt>Licence</dt><dd>Free to copy and adopt</dd></div>
+    <div><dt>Citation</dt><dd>the Millesimal Standard v1.0</dd></div>
+  </dl>
+
+  <div class="acts">
+    <button class="btn btn-primary" type="button" id="copy-all">Copy the whole Standard <span class="arrow" aria-hidden="true">→</span></button>
+    <button class="btn" type="button" id="copy-clause">Copy the contract clause</button>
+    <button class="btn" type="button" id="print">Save as PDF</button>
+  </div>
+</header>
+
+<!-- ══════════ THE RULE ══════════ -->
+<section class="rule-band">
+  <div class="shell">
+    <p class="eyebrow">The rule</p>
+    <h2>There is no partial credit. Six out of seven is <span class="hi">an unqualified meeting with a good excuse.</span></h2>
+    <p>Binary judgements can be made consistently by different people on different days. Graded ones cannot, and a standard that cannot be applied consistently is not a standard. Each criterion has a formal name and a plain-language name. They mean the same thing, and either may be cited.</p>
+
+    <nav class="index-grid" aria-label="The seven criteria">
+      <a class="ix" href="#c1"><span class="n">01</span><b>Role</b><span>Right person</span></a>
+      <a class="ix" href="#c2"><span class="n">02</span><b>Fit</b><span>Right company</span></a>
+      <a class="ix" href="#c3"><span class="n">03</span><b>Awareness</b><span>They knew who they were meeting</span></a>
+      <a class="ix" href="#c4"><span class="n">04</span><b>Need</b><span>They said it themselves</span></a>
+      <a class="ix" href="#c5"><span class="n">05</span><b>Consent</b><span>They agreed to a sales call</span></a>
+      <a class="ix" href="#c6"><span class="n">06</span><b>Attendance</b><span>They turned up</span></a>
+      <a class="ix" href="#c7"><span class="n">07</span><b>Novelty</b><span>New to the buyer</span></a>
+    </nav>
+  </div>
+</section>
+
+<!-- ══════════ THE CRITERIA ══════════ -->
+<section class="doc shell">
+
+  <article class="crit" id="c1">
+    <div class="crit-id"><span class="n">CRITERION 01</span><h3>Role</h3><span class="plain">Right person</span></div>
+    <div>
+      <p class="rule">The attendee holds a role with documented decision-making authority, or direct functional responsibility, in the category being sold into.</p>
+      <p class="tight">Assessed on the role itself, not on the person's claims about budget or seniority.</p>
+      <div class="pf">
+        <div class="pass"><span class="k">Passes</span><p>Head of Revenue Operations attends a meeting about sales tooling. VP Engineering attends a meeting about developer infrastructure. A procurement manager attends a vendor evaluation in their category.</p></div>
+        <div class="fail"><span class="k">Fails</span><p>A junior analyst with no stated remit takes the call because their director forwarded the email. An office manager attends a meeting about enterprise data governance. A founder attends but has explicitly delegated purchasing authority to someone who is not present.</p></div>
+      </div>
+      <p><b>What "documented" means.</b> A title verifiable against LinkedIn, the company website, an org chart, an email signature or a company directory. Where the company has published a role definition or org structure, that definition governs. Where the role is ambiguous or undisclosed, the attendee must state their authority in the meeting itself, and that statement is recorded.</p>
+      <div class="aside">
+        <span class="k">Deliberately excluded — budget and purchase timing</span>
+        <p>A prospect saying "we have budget for this" or "we'll be buying in Q2" on a first call is a claim about the future, not a fact, and cannot be verified by anyone. Establishing budget and timing is the closer's job, not the setter's. Holding a setter to an unverifiable self-report makes a standard both unfair and unrepeatable.</p>
+        <p>Where a campaign has a legitimate timing requirement, it is written into the profile at campaign start and tested under criterion 2.</p>
+      </div>
+      <p class="ev">EVIDENCE · attendee name, verified job title, and the company's own listing of that role. Any clarification of authority given during the meeting is recorded in the meeting report.</p>
+    </div>
+  </article>
+
+  <article class="crit" id="c2">
+    <div class="crit-id"><span class="n">CRITERION 02</span><h3>Fit</h3><span class="plain">Right company</span></div>
+    <div>
+      <p class="rule">The account matches the Ideal Customer Profile agreed in writing before outreach began.</p>
+      <p class="tight">The ICP must be recorded at campaign start and cannot be changed retrospectively. A buyer who broadens their ICP mid-campaign cannot reject earlier meetings against the new definition; an agency cannot claim an out-of-profile account was "close enough".</p>
+      <div class="pf">
+        <div class="pass"><span class="k">Passes</span><p>ICP states UK-headquartered SaaS businesses, 50–500 employees. Account is a 200-person UK SaaS business.</p></div>
+        <div class="fail"><span class="k">Fails</span><p>ICP states 50–500 employees. Account has 12. The buyer's ICP was vague, so the agency interpreted it generously.</p></div>
+      </div>
+      <div class="aside">
+        <span class="k">Timing requirements live here</span>
+        <p>A buyer may write a timing condition into the profile — <i>contract renews before June</i>, <i>currently in an RFP</i>, <i>has posted a role for this function</i> — and where they have, it is tested under this criterion like any other attribute, against the record rather than against what the prospect said they intended.</p>
+        <p>What cannot be tested is a prospect's statement about when they expect to buy. <b>The distinction is not what the condition is about, but whether it was agreed in writing before outreach began and can be checked against something other than the prospect's own forecast.</b></p>
+      </div>
+      <p>If a campaign's ICP is too loose to adjudicate against, that is a finding in itself, and the honest answer is that the campaign should not have launched.</p>
+      <p class="ev">EVIDENCE · the written ICP from campaign setup, plus the account's checkable attributes.</p>
+    </div>
+  </article>
+
+  <article class="crit" id="c3">
+    <div class="crit-id"><span class="n">CRITERION 03</span><h3>Awareness</h3><span class="plain">They knew who they were meeting</span></div>
+    <div>
+      <p class="rule">The attendee could state, in their own words, what the vendor does — before or at the start of the meeting.</p>
+      <p class="tight">The test is whether a real person knowingly agreed to talk to a specific company about a specific thing. Not whether they were impressed.</p>
+      <div class="pf">
+        <div class="pass"><span class="k">Passes</span><p>"You're the compliance monitoring people — Sarah mentioned you handle the FCA reporting side."</p></div>
+        <div class="fail"><span class="k">Fails</span><p>"Sorry, remind me who you are again? I just accept most of these."</p></div>
+      </div>
+      <div class="aside">
+        <span class="k">Recognition, not agreement</span>
+        <p>Whether the attendee understood they were entering a commercial conversation is criterion 5. The two are separated because they fail for different reasons and say different things about an agency: a prospect can know exactly who the vendor is and still have been misled about what the meeting was for, and a prospect can have consented to a sales call in general terms without knowing which company was on the other end.</p>
+      </div>
+      <p class="ev">EVIDENCE · the meeting report records what the attendee understood the vendor to do. Where the attendee could not articulate it, that is recorded plainly.</p>
+    </div>
+  </article>
+
+  <article class="crit" id="c4">
+    <div class="crit-id"><span class="n">CRITERION 04</span><h3>Need</h3><span class="plain">They said it themselves</span></div>
+    <div>
+      <p class="rule">The attendee described a problem, situation or objective that falls within the vendor's solution space.</p>
+      <p class="tight">The need does not have to be urgent, funded, or prioritised. It has to be real and relevant. "We're fine, but tell me more" is not a need. "Our renewals process is manual and it's becoming a problem" is.</p>
+      <div class="pf">
+        <div class="pass"><span class="k">Passes</span><p>Prospect describes a current manual process the vendor automates.</p></div>
+        <div class="fail"><span class="k">Fails</span><p>Prospect took the call as a favour, has no relevant problem, and says so.</p></div>
+      </div>
+      <div class="aside">
+        <span class="k">Note the asymmetry with criterion 1</span>
+        <p>Need is assessed on what the prospect actually said about their present situation, which is observable. Budget and purchase timing are assessed on what they claim about the future, which is not. That is why one is in the Standard and the others are not.</p>
+      </div>
+      <p class="ev">EVIDENCE · the need as described, in the attendee's own framing, recorded in the meeting report.</p>
+    </div>
+  </article>
+
+  <article class="crit" id="c5">
+    <div class="crit-id"><span class="n">CRITERION 05</span><h3>Consent</h3><span class="plain">They agreed to a sales call</span></div>
+    <div>
+      <p class="rule">The attendee knowingly agreed to a sales conversation with the vendor.</p>
+      <p class="tight">They understood they were booking a commercial discussion. They were not misled about the nature, subject or host of the meeting.</p>
+      <div class="pf">
+        <div class="pass"><span class="k">Passes</span><p>Prospect replied to outreach, agreed to a call about the vendor's product, and a calendar invite named the vendor.</p></div>
+        <div class="fail"><span class="k">Fails</span><p>The meeting was secured by offering a gift card. The invitation described "a short research interview" or "an industry benchmarking chat" and became a pitch. The prospect believed they were meeting a different company.</p></div>
+      </div>
+      <div class="aside">
+        <span class="k">This protects the buyer's brand, not just their invoice</span>
+        <p>A meeting obtained by misdirection is a liability even when someone attends, and an industry standard that permitted it would be worthless.</p>
+      </div>
+      <p class="ev">EVIDENCE · the booking mechanism, the wording of the invitation, and any incentive offered.</p>
+    </div>
+  </article>
+
+  <article class="crit" id="c6">
+    <div class="crit-id"><span class="n">CRITERION 06</span><h3>Attendance</h3><span class="plain">They turned up</span></div>
+    <div>
+      <p class="rule">The meeting took place, with the qualifying attendee present, for long enough to hold a real conversation.</p>
+      <div class="pf">
+        <div class="pass"><span class="k">Passes</span><p>Meeting occurred; the qualifying attendee joined and participated.</p></div>
+        <div class="fail"><span class="k">Fails</span><p>No-show. Attendee joined for two minutes and left. Only a delegate attended, and that delegate does not independently satisfy criterion 1.</p></div>
+      </div>
+      <div class="aside">
+        <span class="k">Rescheduling and no-shows</span>
+        <p>A meeting rebooked before its start time is not a failure. It carries its original submission forward. Up to two reschedules are permitted; beyond that the meeting is void and not counted either way.</p>
+        <p>A no-show fails this criterion. If the same attendee is rebooked and attends within 14 days, the meeting may be resubmitted once as a new meeting.</p>
+      </div>
+      <p class="ev">EVIDENCE · attendance confirmed by the vendor, and independently by the attendee where they respond to a confirmation request. A non-response from the attendee is recorded but does not by itself fail the criterion.</p>
+    </div>
+  </article>
+
+  <article class="crit" id="c7">
+    <div class="crit-id"><span class="n">CRITERION 07</span><h3>Novelty</h3><span class="plain">New to the buyer</span></div>
+    <div>
+      <p class="rule">The account was not already in the buyer's active pipeline, and was not on the suppression list supplied at campaign start.</p>
+      <p class="tight">The buyer must supply a suppression list before outreach begins. An account absent from that list, and not independently in an active sales process within the prior 90 days, is novel.</p>
+      <div class="pf">
+        <div class="pass"><span class="k">Passes</span><p>Account has no prior contact with the buyer, or last contact was over 90 days ago and closed.</p></div>
+        <div class="fail"><span class="k">Fails</span><p>Account was in an open opportunity. Account was on the suppression list. The same account already produced a meeting on this campaign within 90 days.</p></div>
+      </div>
+      <div class="aside">
+        <span class="k">The obligation runs both ways</span>
+        <p>A buyer who fails to supply a suppression list cannot later reject meetings on novelty grounds.</p>
+      </div>
+      <p class="ev">EVIDENCE · the suppression list from campaign setup, plus the buyer's CRM record.</p>
+    </div>
+  </article>
+
+  <!-- ══════════ RULES OF APPLICATION ══════════ -->
+  <section class="apply">
+    <p class="eyebrow">Rules of application</p>
+    <h2>How the seven are used once money is involved.</h2>
+    <dl class="rules">
+      <div><dt>Objection window</dt><dd>A held meeting is Qualified unless the buyer flags it within <b>three business days</b>, counted in the buyer's own timezone. Silence clears the meeting.</dd></div>
+      <div><dt>Burden</dt><dd>The agency evidences the meeting. The buyer evidences any objection, against a named criterion. <b>"It felt weak" is not an objection</b>; "criterion 2, the account has 15 employees against an ICP floor of 50" is.</dd></div>
+      <div><dt>Adjudication</dt><dd>Each criterion is decided separately. A single failed criterion fails the meeting, but the record shows which one — because "failed on Fit" and "failed on Consent" are very different findings about an agency.</dd></div>
+      <div><dt>Versioning</dt><dd>Every verdict is recorded against the Standard version in force when the meeting occurred. <b>Later versions never apply retrospectively.</b></dd></div>
+      <div><dt>Amendment</dt><dd>Changes are published with a rationale and a comment period. The Standard improves by being argued with.</dd></div>
+      <div><dt>What it does not do</dt><dd>It does not measure revenue, or whether a meeting was <i>good</i>, or budget and purchase intent. A standard that tried to measure all of those would measure none of them reliably.</dd></div>
+    </dl>
+  </section>
+</section>
+
+<!-- ══════════ THE RATING ══════════ -->
+<section class="rating">
+  <div class="shell">
+    <p class="eyebrow">The Millesimal Rating</p>
+    <h2>Cleared meetings per thousand submitted. Arithmetic, not opinion.</h2>
+    <div class="cols">
+      <div>
+        <div class="stamp"><div><b>925</b><span>STERLING</span></div></div>
+        <p>The name comes from hallmarking. Before precious metal can be sold in Britain, an independent Assay Office tests it and stamps its purity as a number out of 1,000 — sterling silver is 925. Buyers trust the stamp rather than the seller's word. That is a several-hundred-year-old answer to exactly the problem this industry has.</p>
+      </div>
+      <div>
+        <p>An agency at <b>870</b> delivers 870 qualified meetings for every 1,000 it books. Because it is arithmetic rather than taste, it can be published without becoming a matter of opinion.</p>
+        <p>For context, industry sources put healthy B2B show rates at 70–80%. A rating is a stricter measure than show rate, since attendance is only one of seven criteria — so ratings should be expected to sit <b>below</b> an agency's show rate, and the gap between the two is itself informative.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ LICENCE & ADOPTION ══════════ -->
+<section class="extras shell" id="licence">
+  <p class="eyebrow">Adopting it</p>
+  <h2>Copy it. Argue with it. Both are the point.</h2>
+
+  <div class="licence">
+    <span class="k">Licence</span>
+    <p><b>Free to copy, cite and adopt. No permission required.</b> Cite it as <i>the Millesimal Standard v1.0</i> in a contract, or copy the seven criteria into your own terms. Attribution is appreciated, not required.</p>
+    <p><b>One restriction, and only one:</b> no modified version may be published under the Millesimal name, or described as a version of the Millesimal Standard. Change it freely for your own use — but a document that says "Millesimal" has to be this document, or the name stops meaning anything.</p>
+    <p>Agreeing a definition before outreach starts is worth more than which definition you agree. If a criterion is wrong, unfair or unworkable in your market, say so — that is how version 1.1 gets written.</p>
+  </div>
+
+  <div class="licence" style="margin-top:20px">
+    <span class="k">The clause, for a contract</span>
+    <p id="clause-text"><b>Qualified Meeting.</b> A meeting is a Qualified Meeting if and only if it satisfies all seven criteria of the Millesimal Standard v1.0, as published at millesimal.uk. The version in force at the date of the meeting governs; later versions do not apply retrospectively. A held meeting is deemed Qualified unless the Buyer notifies the Agency of an objection, identifying the specific criterion failed and supplying supporting evidence, within three (3) working days of the meeting.</p>
+    <div class="acts" style="margin-top:20px">
+      <button class="btn" type="button" id="copy-clause-2">Copy this clause</button>
+      <a class="btn btn-primary" href="index.html#ruling">Ask to join the review panel <span class="arrow" aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="shell">
+  <div class="foot">
+    <div>
+      <a class="brand" href="index.html" style="margin-bottom:13px"><span class="mark" role="img" aria-label="Millesimal"></span><b>millesimal</b></a>
+      <p>The Standard is maintained independently of any agency, platform or vendor. Millesimal is not paid for meetings, does not book meetings, and has no commercial interest in whether any given meeting is judged qualified.</p>
+    </div>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="index.html#checks">The seven checks</a>
+      <a href="index.html#independence">Independence</a>
+      <a href="MV-2026-0057.pdf">A worked ruling</a>
+      <a href="index.html#ruling">Get a ruling</a>
+    </nav>
+  </div>
+  <p class="foot-note">© 2026 Millesimal · The Millesimal Standard v1.0 · September 2026</p>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  'use strict';
+  var toast = document.getElementById('toast'), tt;
+  function say(msg){
+    toast.textContent = msg; toast.classList.add('on');
+    clearTimeout(tt); tt = setTimeout(function(){ toast.classList.remove('on'); }, 2600);
+  }
+  function copy(text, btn, msg){
+    function done(){
+      say(msg);
+      if (btn){ btn.setAttribute('data-copied',''); setTimeout(function(){ btn.removeAttribute('data-copied'); }, 2200); }
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done).catch(function(){ fallback(text, done); });
+    } else { fallback(text, done); }
+  }
+  function fallback(text, done){
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.setAttribute('readonly','');
+    ta.style.cssText = 'position:fixed;left:-9999px;top:0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); done(); } catch(e){ say('Copy failed — select the text instead'); }
+    document.body.removeChild(ta);
+  }
+
+  /* Build the plain-text Standard from the page itself, so the copy can
+     never drift from what is published. */
+  function plainText(){
+    var out = [];
+    out.push('THE MILLESIMAL STANDARD');
+    out.push('A public definition of a qualified outbound meeting');
+    out.push('Version 1.0 — September 2026');
+    out.push('Free to copy, cite and adopt. No permission required.');
+    out.push('Published at https://millesimal.uk/standard.html');
+    out.push('');
+    out.push('THE RULE');
+    out.push('A meeting is Qualified if, and only if, it satisfies all seven criteria below.');
+    out.push('There is no partial credit. Six out of seven is not a qualified meeting; it is an');
+    out.push('unqualified meeting with a good excuse.');
+    out.push('');
+    [].forEach.call(document.querySelectorAll('.crit'), function(a, i){
+      var name  = a.querySelector('h3').textContent.trim();
+      var plain = a.querySelector('.plain').textContent.trim();
+      out.push((i+1) + '. ' + name.toUpperCase() + ' — ' + plain);
+      out.push('');
+      [].forEach.call(a.querySelectorAll('.rule, .tight, .pf p, .aside p, .ev, .crit > div > p'), function(p){
+        var t = p.textContent.replace(/\s+/g,' ').trim();
+        if (!t) return;
+        var k = p.parentNode.querySelector ? p.parentNode.querySelector('.k') : null;
+        var lead = (k && p.parentNode.classList.contains('pass')) ? 'Passes: '
+                 : (k && p.parentNode.classList.contains('fail')) ? 'Fails: ' : '';
+        if (out.indexOf(lead + t) === -1) out.push(lead + t);
+      });
+      out.push('');
+    });
+    out.push('RULES OF APPLICATION');
+    [].forEach.call(document.querySelectorAll('.rules div'), function(d){
+      out.push(d.querySelector('dt').textContent.trim().toUpperCase() + ': ' +
+               d.querySelector('dd').textContent.replace(/\s+/g,' ').trim());
+    });
+    out.push('');
+    out.push('THE MILLESIMAL RATING');
+    out.push('An agency’s rating is the number of meetings, per 1,000 submitted, that were Qualified.');
+    out.push('');
+    out.push('LICENCE');
+    out.push('Free to copy, cite and adopt. No permission required. No modified version may be');
+    out.push('published under the Millesimal name or described as a version of the Millesimal Standard.');
+    out.push('');
+    out.push('CONTRACT CLAUSE');
+    out.push(document.getElementById('clause-text').textContent.replace(/\s+/g,' ').trim());
+    return out.join('\n');
+  }
+
+  document.getElementById('copy-all').addEventListener('click', function(){
+    copy(plainText(), this, 'Standard copied — paste anywhere');
+  });
+  function clause(){ return document.getElementById('clause-text').textContent.replace(/\s+/g,' ').trim(); }
+  document.getElementById('copy-clause').addEventListener('click', function(){
+    copy(clause(), this, 'Clause copied');
+  });
+  document.getElementById('copy-clause-2').addEventListener('click', function(){
+    copy(clause(), this, 'Clause copied');
+  });
+  document.getElementById('print').addEventListener('click', function(){ window.print(); });
+
+  /* read progress on the nav underline */
+  var nav = document.querySelector('.nav'), doc = document.documentElement, ticking = false;
+  function progress(){
+    var max = doc.scrollHeight - doc.clientHeight;
+    nav.style.setProperty('--read', (max > 0 ? Math.min(1, Math.max(0, doc.scrollTop / max)) : 0).toFixed(4));
+    ticking = false;
+  }
+  addEventListener('scroll', function(){
+    if (!ticking) { ticking = true; requestAnimationFrame(progress); }
+  }, { passive:true });
+  progress();
+})();
+</script>
+</body>
+</html>

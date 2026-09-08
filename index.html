@@ -41,7 +41,22 @@
   "description":"An independent judge for outbound sales meetings. Millesimal judges meetings against seven checks and issues written rulings. It does not book meetings and does not sell leads.",
   "slogan":"An independent judge for sales meetings you paid for.",
   "areaServed":"GB",
-  "knowsAbout":["Outbound sales","Appointment setting","Meeting qualification","Dispute adjudication"]
+  "knowsAbout":["Outbound sales","Appointment setting","Meeting qualification","Dispute adjudication"],
+  "email":"hello@millesimal.uk",
+  "makesOffer":{
+    "@type":"Offer",
+    "itemOffered":{
+      "@type":"Service",
+      "name":"Adjudication of a disputed outbound meeting",
+      "description":"An independent written ruling on whether a meeting met the Millesimal Standard, issued to both parties with per-criterion reasoning and a right of reply."
+    }
+  },
+  "subjectOf":{
+    "@type":"TechArticle",
+    "name":"The Millesimal Standard v1.0",
+    "url":"https://millesimal.uk/standard.html",
+    "isAccessibleForFree":true
+  }
 }
 </script>
 
@@ -120,6 +135,8 @@ body{
 #checks{padding-top:clamp(40px,5vw,78px)}
 a{color:inherit;text-decoration:none}
 :focus-visible{outline:2px solid var(--judge);outline-offset:3px}
+::selection{background:var(--judge);color:var(--cta-ink)}
+.band-bone ::selection{background:var(--orange-deep);color:#F4F1EB}
 img{max-width:100%}
 
 /* ── ONE GRID. Every two-column block uses it, so every
@@ -161,7 +178,7 @@ h3{font-size:clamp(22px,2.5vw,32px);font-weight:500;letter-spacing:-.03em;line-h
 .nav-set{display:flex;align-items:center;gap:7px}
 .nav-btn{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--t1);border:1px solid var(--line);padding:11px 15px;line-height:1;white-space:nowrap;transition:border-color .18s var(--ease),background .18s var(--ease)}
 .nav-cta{background:var(--grad);color:var(--cta-ink);border:0;font-weight:500;padding:12px 19px;position:relative;overflow:hidden}
-@media (max-width:1120px){ .nav-hide{display:none} }
+@media (max-width:1180px){ .nav-hide{display:none} }
 
 /* ══ INTERACTION SYSTEM ════════════════════════════════════
    One language everywhere: a brand-orange bloom whose
@@ -342,7 +359,7 @@ html{scrollbar-color:rgba(244,241,235,.18) transparent;scrollbar-width:thin}
    pinned beside the wordmark so the action is always one tap
    away. The fade on the right edge signals there is more.
    ═════════════════════════════════════════════════════════ */
-@media (max-width:1120px){
+@media (max-width:1180px){
   .nav-in{flex-wrap:wrap;column-gap:12px;row-gap:0;min-height:0;padding-top:2px}
   .brand{margin-right:auto;padding:11px 0}
   .nav-cta{order:1;flex:none}
@@ -691,7 +708,7 @@ html{scrollbar-color:rgba(244,241,235,.18) transparent;scrollbar-width:thin}
 .clause{border:1px solid var(--line);padding:clamp(20px,2.3vw,26px);background:rgba(244,241,235,.025)}
 .clause p{font-size:15.5px;line-height:1.68;color:var(--t2)}
 .clause-bar{display:flex;align-items:center;gap:13px;flex-wrap:wrap;margin-top:17px}
-.copy-btn{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:10.5px;font-weight:500;letter-spacing:.13em;text-transform:uppercase;background:transparent;border:1px solid var(--line);color:var(--t1);padding:11px 16px;cursor:pointer;transition:border-color .18s var(--ease),color .18s var(--ease)}
+.copy-btn{display:inline-flex;align-items:center;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:10.5px;font-weight:500;letter-spacing:.13em;text-transform:uppercase;background:transparent;border:1px solid var(--line);color:var(--t1);padding:11px 16px;cursor:pointer;transition:border-color .18s var(--ease),color .18s var(--ease)}
 .copy-btn[data-copied]{border-color:var(--judge);color:var(--judge)}
 .copy-note{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--t3)}
 
@@ -703,6 +720,26 @@ html{scrollbar-color:rgba(244,241,235,.18) transparent;scrollbar-width:thin}
 .form-card{border:1px solid var(--line);background:linear-gradient(168deg,var(--ink-2),var(--ink-1) 70%);padding:clamp(20px,2.5vw,32px);position:relative}
 .form-card h3{font-size:21px;font-weight:500;letter-spacing:-.02em;margin-bottom:6px}
 .form-card .hint{color:var(--t2);font-size:15px;margin-bottom:21px}
+
+/* Intent switch. Three different people arrive at one form — someone
+   with a disputed meeting, someone answering the panel call, someone
+   who wants the templates. Landing all three on "Send one meeting in"
+   loses two of them. */
+.intent{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;
+  border:1px solid var(--line);margin-bottom:21px}
+.intent button{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:10px;
+  letter-spacing:.09em;text-transform:uppercase;background:transparent;border:0;
+  border-right:1px solid var(--line);color:var(--t2);padding:12px 6px;line-height:1.35;
+  cursor:pointer;transition:background .2s var(--ease),color .2s var(--ease),
+  box-shadow .22s var(--ease)}
+.intent button:last-child{border-right:0}
+@media (hover:hover){ .intent button:hover{color:var(--t1);background:rgba(244,241,235,.05)} }
+.intent button[aria-pressed="true"]{color:var(--cta-ink);background-image:var(--grad);
+  font-weight:700;box-shadow:0 6px 22px -12px rgba(255,90,0,.85)}
+.intent button:focus-visible{outline:2px solid var(--judge);outline-offset:-3px}
+@media (max-width:400px){ .intent{grid-template-columns:1fr}
+  .intent button{border-right:0;border-bottom:1px solid var(--line)}
+  .intent button:last-child{border-bottom:0} }
 .field{margin-bottom:15px}
 .field label{display:block;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:10.5px;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--t2);margin-bottom:8px}
 .req{color:var(--judge)}
@@ -730,7 +767,31 @@ footer{border-top:1px solid var(--line-soft);padding-top:clamp(44px,5vw,70px);pa
   *,*::before,*::after{animation:none!important;transition:none!important}
   .rise{opacity:1;transform:none}
 }
-@media print{ .nav,.form-card,.btn-row,.copy-btn{display:none} body{background:#fff;color:#000} }
+@media print{
+  @page{ size:A4; margin:16mm 15mm }
+  html,body{background:#fff!important;color:#111!important;font-size:10.4pt;line-height:1.5}
+  .nav,.form-card,.btn-row,.copy-btn,.clause-bar,.skip,.case,.nudge,.gauge,.calc,
+  .intent,.panel-cta,.hero-trust,.keybar,.cta .wm{display:none!important}
+  .shell,.wrap{max-width:none;padding:0}
+  .pad-y,#checks,#ruling,section{padding-top:12pt!important;padding-bottom:12pt!important}
+  .band-bone,.cta,.disclose{background:#fff!important;color:#111!important}
+  h1{font-size:24pt;line-height:1.05;color:#111!important}
+  h2{font-size:16pt;line-height:1.12;color:#111!important;margin-bottom:6pt;
+     page-break-after:avoid;break-after:avoid}
+  h3{font-size:12pt;color:#111!important}
+  p,li,dd{color:#333!important}
+  .hi,.eyebrow,.lbl,.pn,.stops,.dl,.rref{color:#666!important}
+  .grid2,.rows,.pledges,.rulings,.benefits-row,.cards,.foot-grid,.disclose-in{
+     display:block!important}
+  .pledge,.nrow,.ruling,.dnote,.card,.step,.benefit{border:0;border-bottom:.5pt solid #ddd;
+     padding:7pt 0;page-break-inside:avoid;break-inside:avoid;background:none!important}
+  .disclose{border-left:1.5pt solid #999;padding:10pt 0 10pt 12pt}
+  .clause{border:.75pt solid #999;padding:9pt;page-break-inside:avoid;break-inside:avoid}
+  main section{page-break-inside:auto}
+  a{color:#111!important;text-decoration:none}
+  .rulings a::after{content:" (millesimal.uk/" attr(href) ")";font-size:8pt;color:#666}
+  footer{border-top:.75pt solid #999;padding-top:9pt}
+}
 </style>
 </head>
 <body>
@@ -750,6 +811,7 @@ footer{border-top:1px solid var(--line-soft);padding-top:clamp(44px,5vw,70px);pa
       <a class="nav-btn nav-hide" href="#score">The score</a>
       <a class="nav-btn nav-hide" href="#neutral">Why us</a>
       <a class="nav-btn nav-hide" href="#independence">Independence</a>
+      <a class="nav-btn nav-hide" href="standard.html">The Standard</a>
     </div>
     <a class="nav-btn nav-cta" href="#ruling">Get a ruling</a>
   </div>
@@ -1126,7 +1188,7 @@ footer{border-top:1px solid var(--line-soft);padding-top:clamp(44px,5vw,70px);pa
           <h3>One adjudicator, declared to you before you submit anything.</h3>
           <p>Millesimal is currently a single adjudicator. <b>Any party to a ruling is told who that is, and what else they do, before they send a single piece of evidence</b> — and either side may refuse that adjudicator on those grounds, at no cost and without giving a reason.</p>
           <p style="margin-top:14px">Declared to the parties, not published to the internet. That is how disclosure works where it carries weight: the people whose money is at stake get the facts and a right of objection, before the decision rather than after it.</p>
-          <a class="panel-cta" href="#ruling">Ask to join the review panel <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="panel-cta" href="#ruling" data-go-intent="panel">Ask to join the review panel <span class="arrow" aria-hidden="true">→</span></a>
         </div>
         <div>
           <div class="dnote">
@@ -1166,16 +1228,24 @@ footer{border-top:1px solid var(--line-soft);padding-top:clamp(44px,5vw,70px);pa
           <p id="clause-text"><b>Qualified Meeting.</b> A meeting is a Qualified Meeting if and only if it passes all seven checks of the Millesimal Standard v1.0, as published at millesimal.uk. The version in force at the date of the meeting governs; later versions do not apply retrospectively. A held meeting is deemed Qualified unless the Buyer notifies the Agency of an objection, identifying the specific check failed and supplying supporting evidence, within three (3) working days of the meeting.</p>
           <div class="clause-bar">
             <button class="copy-btn" type="button" data-copy="#clause-text">Copy clause</button>
-            <span class="copy-note">Free to use · no permission required</span>
+            <a class="copy-btn" href="standard.html">Read the full Standard</a>
+            <a class="copy-btn" href="#ruling" data-go-intent="pack">Get the adoption pack</a>
           </div>
+          <p class="copy-note" style="display:block;margin-top:13px">Free to use · no permission required</p>
         </div>
       </div>
 
       <div class="form-card rise" data-d="1">
-        <h3>Send one meeting in</h3>
-        <p class="hint">Tell us roughly what happened. We reply with exactly what evidence we need and what it costs.</p>
+        <div class="intent" id="intent" role="group" aria-label="What you came for">
+          <button type="button" data-intent="ruling" aria-pressed="true">A disputed<br>meeting</button>
+          <button type="button" data-intent="panel" aria-pressed="false">Join the<br>review panel</button>
+          <button type="button" data-intent="pack" aria-pressed="false">The adoption<br>pack</button>
+        </div>
+        <h3 id="form-title">Send one meeting in</h3>
+        <p class="hint" id="form-hint">Tell us roughly what happened. We reply with exactly what evidence we need and what it costs.</p>
         <form id="ruling-form" action="https://formspree.io/f/xaeybbql" method="POST" novalidate>
-          <input type="hidden" name="_subject" value="Millesimal — request for a ruling">
+          <input type="hidden" name="_subject" id="form-subject" value="Millesimal — request for a ruling">
+          <input type="hidden" name="enquiry" id="form-enquiry" value="Ruling on a disputed meeting">
           <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="field">
             <label for="r-email">Your email <span class="req">*</span></label>
@@ -1190,11 +1260,11 @@ footer{border-top:1px solid var(--line-soft);padding-top:clamp(44px,5vw,70px);pa
             </select>
           </div>
           <div class="field">
-            <label for="r-msg">What happened <span class="req">*</span></label>
+            <label for="r-msg" id="msg-label">What happened <span class="req">*</span></label>
             <textarea id="r-msg" name="message" required placeholder="How many meetings are in dispute, and which check do you think decides it?"></textarea>
           </div>
-          <button class="btn btn-primary" type="submit" style="width:100%">Get a ruling on a meeting <span class="arrow" aria-hidden="true">→</span></button>
-          <p class="form-foot">No recordings, ever. Nothing confidential is needed at this stage — we reply first with exactly what we need.</p>
+          <button class="btn btn-primary" type="submit" style="width:100%" id="form-submit">Get a ruling on a meeting <span class="arrow" aria-hidden="true">→</span></button>
+          <p class="form-foot" id="form-foot">No recordings, ever. Nothing confidential is needed at this stage — we reply first with exactly what we need.</p>
         </form>
       </div>
     </div>
@@ -1210,7 +1280,7 @@ footer{border-top:1px solid var(--line-soft);padding-top:clamp(44px,5vw,70px);pa
       <p>An independent judge for sales meetings you paid for.</p>
     </div>
     <nav class="foot-list" aria-label="Footer">
-      <a href="#how">How it works</a><a href="#checks">The 7 checks</a><a href="#score">The score</a><a href="#neutral">Why us</a><a href="#independence">Independence</a><a href="#ruling">Get a ruling</a>
+      <a href="#how">How it works</a><a href="#checks">The 7 checks</a><a href="#score">The score</a><a href="#neutral">Why us</a><a href="#independence">Independence</a><a href="standard.html">The Standard v1.0</a><a href="MV-2026-0057.pdf">A worked ruling</a><a href="#ruling">Get a ruling</a>
     </nav>
     <div>
       <p class="eyebrow" style="color:var(--t2);margin-bottom:10px">Where we stand</p>
@@ -1511,7 +1581,91 @@ function legacy(text,done){
   document.body.removeChild(ta);
 }
 
+/* ── form intent ───────────────────────────────────────────
+   One form, three arrivals. Anything linking here with
+   data-intent switches it before the scroll lands. */
+(function(){
+  var MODES = {
+    ruling: {
+      title:'Send one meeting in',
+      hint:'Tell us roughly what happened. We reply with exactly what evidence we need and what it costs.',
+      label:'What happened',
+      ph:'How many meetings are in dispute, and which check do you think decides it?',
+      cta:'Get a ruling on a meeting',
+      subject:'Millesimal — request for a ruling',
+      enquiry:'Ruling on a disputed meeting',
+      foot:'No recordings, ever. Nothing confidential is needed at this stage — we reply first with exactly what we need.',
+      side:true, req:true
+    },
+    panel: {
+      title:'Join the panel writing v1.1',
+      hint:'People who have run or bought outbound, arguing with the Standard in public. Credited, and free to disagree.',
+      label:'Which criterion would you fight about',
+      ph:'Name the one you think is wrong, unfair or unworkable — and what you would put in its place.',
+      cta:'Ask to join the review panel',
+      subject:'Millesimal — review panel',
+      enquiry:'Review panel — v1.1',
+      foot:'No commitment beyond reading a draft and telling us where it fails. Panel members are named unless they ask not to be.',
+      side:true, req:false
+    },
+    pack: {
+      title:'Get the adoption pack',
+      hint:'The contract clause, an ICP template, a suppression-list template and the evidence worksheet. Everything you need to run the Standard yourself.',
+      label:'Anything you want included',
+      ph:'Optional. Tell us what your contracts currently say about qualified meetings, if you like.',
+      cta:'Send me the adoption pack',
+      subject:'Millesimal — adoption pack',
+      enquiry:'Adoption pack',
+      foot:'The Standard and the rulings stay free and open — this is the tooling to run it, not the proof that it works.',
+      side:true, req:false
+    }
+  };
+  var intent = document.getElementById('intent');
+  if (!intent) return;
+  var btns = [].slice.call(intent.querySelectorAll('button'));
+  var msg  = document.getElementById('r-msg');
+  var current = 'ruling';
+
+  function set(key, focus){
+    var m = MODES[key]; if (!m) return;
+    current = key;
+    btns.forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.intent === key)); });
+    document.getElementById('form-title').textContent = m.title;
+    document.getElementById('form-hint').textContent  = m.hint;
+    document.getElementById('msg-label').innerHTML    = m.label + (m.req ? ' <span class="req">*</span>' : ' <span style="color:var(--t3)">(optional)</span>');
+    msg.placeholder = m.ph;
+    if (m.req) { msg.setAttribute('required',''); } else { msg.removeAttribute('required'); }
+    document.getElementById('form-submit').innerHTML = m.cta + ' <span class="arrow" aria-hidden="true">→</span>';
+    document.getElementById('form-subject').value    = m.subject;
+    document.getElementById('form-enquiry').value    = m.enquiry;
+    document.getElementById('form-foot').textContent = m.foot;
+    if (focus) { var e = document.getElementById('r-email'); if (e) setTimeout(function(){ e.focus({preventScroll:true}); }, 420); }
+  }
+
+  btns.forEach(function(b){ b.addEventListener('click', function(){ set(b.dataset.intent, false); }); });
+
+  [].forEach.call(document.querySelectorAll('[data-go-intent]'), function(a){
+    a.addEventListener('click', function(){ set(a.dataset.goIntent, true); });
+  });
+
+  function fromHash(){
+    var h = (location.hash || '').replace('#','');
+    if (h === 'panel' || h === 'pack') {
+      set(h, false);
+      var t = document.getElementById('ruling');
+      if (t) t.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+  addEventListener('hashchange', fromHash);
+  fromHash();
+})();
+
 /* ── form ──────────────────────────────────────────────── */
+var OK_MSG = {
+  'Ruling on a disputed meeting':'Received. You will get a reply within one working day telling you exactly what evidence we need.',
+  'Review panel — v1.1':'Received. You will get the current draft and the open objections within one working day.',
+  'Adoption pack':'Received. The pack comes back within one working day — clause, ICP template, suppression list and evidence worksheet.'
+};
 [].forEach.call(document.querySelectorAll('form[action*="formspree"]'), function(form){
   form.addEventListener('submit', function(ev){
     ev.preventDefault();
@@ -1528,7 +1682,7 @@ function legacy(text,done){
       .then(function(res){
         if (res.ok){
           form.reset();
-          say(form,'ok','Received. You will get a reply within one working day telling you exactly what evidence we need.');
+          say(form,'ok', OK_MSG[(document.getElementById('form-enquiry')||{}).value] || 'Received. You will get a reply within one working day.');
           if (btn) btn.textContent = 'Sent';
         } else {
           return res.json().then(function(d){
@@ -1539,7 +1693,7 @@ function legacy(text,done){
       .catch(function(err){
         var m = String(err.message || 'That did not send.').trim();
         if (!/[.!?]$/.test(m)) { m += '.'; }
-        say(form,'error', m + ' Email millesimalcompany@gmail.com and it will be picked up.');
+        say(form,'error', m + ' Email hello@millesimal.uk and it will be picked up.');
         if (btn){ btn.disabled = false; btn.innerHTML = label; }
       });
   });
