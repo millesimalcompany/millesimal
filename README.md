@@ -35,13 +35,36 @@ required, no licence to accept.
 | `pricing.html` | Buyer route — pricing, evidence, and the hard questions |
 | `adopt.html` | Agency route — certification, the rating, and what it costs you |
 | `404.html` | Not-found page |
-| `assets/millesimal.css` | The whole design system |
+| `assets/millesimal.css` | The whole design system, including self-hosted `@font-face` |
 | `assets/millesimal.js` | Motion and interaction — progressive enhancement only |
-| `assets/og.png` | Open Graph card |
-| `MV-2026-*.pdf` | Three specimen rulings |
-| `Millesimal-Adoption-Pack-v1.0.pdf` | Adoption pack |
+| `assets/fonts/` | Quicksand and IBM Plex Mono, self-hosted. No third-party font request |
+| `assets/mark.svg` | The mark, gradient. Traced from the master artwork |
+| `assets/wordmark.svg` | The wordmark, outlined Quicksand 400 — `currentColor` |
+| `assets/lockup*.svg` | Mark + wordmark, in light / dark / flat variants |
+| `assets/*-flat.svg` | Flat-fill variants for print and PDF, where gradients are unreliable |
+| `assets/favicon.svg` | Vector favicon; `favicon.ico` is the legacy fallback |
+| `assets/og.png` | Share card, rendered from the vector lockup |
 | `CHANGELOG.md` | Version history of the Standard |
 | `CONTRIBUTING.md` | How to argue with the Standard |
+
+---
+
+## Brand
+
+Two assets, one source of truth each.
+
+- **The mark** is a bespoke ligature, vectorised from the master artwork. `mark.svg` carries the
+  brand gradient; `mark-mono.svg` inherits `currentColor`; `mark-flat.svg` is a solid fill for
+  print. It stays legible down to about 18px.
+- **The wordmark** is lowercase `millesimal` — Quicksand 400 with 0.01em tracking, converted to
+  outlines so it renders identically with or without the webfont.
+
+Never re-set the wordmark as live text, never letterspace it, never use the mark alone at under
+18px, and never place the gradient variant in a PDF — use the flat one.
+
+The mark also appears inside the artefacts themselves: the ruling card, the verdict readout and
+the contract clause each carry it, with a watermark bleeding off one corner. Those are the
+elements people screenshot, and a screenshot should identify its own source.
 
 ---
 
