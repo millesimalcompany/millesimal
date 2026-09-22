@@ -32,7 +32,7 @@ required, no licence to accept.
 | `standard.html` | The Millesimal Standard v1.0, in full, with per-criterion permalinks (`#c1`–`#c7`) |
 | `rulings.html` | How to read a ruling, plus the three worked specimens |
 | `independence.html` | The eight published commitments and the adjudicator disclosure position |
-| `pricing.html` | Buyer route — pricing, evidence, and the hard questions |
+| `buyers.html` | Buyer route — how the fee works, evidence, and the hard questions |
 | `adopt.html` | Agency route — certification, the rating, and what it costs you |
 | `404.html` | Not-found page |
 | `assets/millesimal.css` | The whole design system, including self-hosted `@font-face` |
@@ -131,7 +131,7 @@ every push to `main` deploys automatically. There is nothing to build — Vercel
 files as they are.
 
 `vercel.json` sets security headers, asset caching, and a set of short redirects:
-`/standard`, `/rulings`, `/pricing`, `/adopt`, `/buyers`, `/agencies`, and the
+`/standard`, `/rulings`, `/pricing` (→ `/buyers.html`), `/adopt`, `/agencies`, and the
 `/v/MV-2026-XXXX` verification paths printed on the specimen rulings.
 
 `.github/workflows/guard.yml` runs on every push and fails the build if anything matching
@@ -156,6 +156,18 @@ commit history, and PDFs are indexed by search engines.
   weight.
 
 The repository is a shop window, not a filing cabinet.
+
+---
+
+## A note on published fees
+
+Fee figures are deliberately absent from the public site for now. The *structure* is still
+published — flat per meeting, agreed before evidence is filed, identical whichever way the ruling
+goes, no commission — because that structure is what commitment 01 on the independence page
+actually claims, and it is what a buyer needs in order to trust the ruling.
+
+Numbers return once there is a body of real rulings to price against. When they do, they go back
+on `buyers.html` and in the `Offer` block of the homepage JSON-LD.
 
 ---
 
