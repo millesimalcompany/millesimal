@@ -1,4 +1,4 @@
-/* ─── self-hosted brand faces — no third-party font request ──────── */
+/* ─── self-hosted brand faces · no third-party font request ──────── */
 @font-face{font-family:Quicksand;font-style:normal;font-weight:300;font-display:swap;
   src:url("fonts/quicksand-latin-300-normal.woff2") format("woff2")}
 @font-face{font-family:Quicksand;font-style:normal;font-weight:400;font-display:swap;
@@ -15,10 +15,10 @@
   src:url("fonts/ibm-plex-mono-latin-500-normal.woff2") format("woff2")}
 
 /* ═══════════════════════════════════════════════════════════════════════
-   MILLESIMAL — design system v3.0
+   MILLESIMAL · design system v3.0
    ───────────────────────────────────────────────────────────────────────
    Two grounds: ink and bone. Four parties, each with a fixed colour that
-   never moves — agency, buyer, prospect, and the judge. The neutrality
+   never moves · agency, buyer, prospect, and the judge. The neutrality
    argument is carried by the colour system rather than asserted in copy.
 
    Motion principle: instrumentation, not marketing. Things measure,
@@ -47,7 +47,7 @@
   --b3:#453F36;
   --b4:#5C564B;
 
-  /* the four parties — fixed everywhere */
+  /* the four parties · fixed everywhere */
   --agency:#5FD8BC;
   --agency-dim:rgba(95,216,188,.14);
   --buyer:#7FA9FF;
@@ -567,7 +567,7 @@ em.q{font-style:normal;color:var(--t1);border-bottom:1px solid var(--judge);padd
 
 .scroll-x{overflow-x:auto;-webkit-overflow-scrolling:touch}
 
-/* ═══ SEVEN CHECKS — interactive ═══════════════════════════════════ */
+/* ═══ SEVEN CHECKS · interactive ═══════════════════════════════════ */
 
 .checks{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(26px,3.4vw,56px);align-items:start}
 @media(max-width:1000px){.checks{grid-template-columns:1fr}}
@@ -863,8 +863,8 @@ em.q{font-style:normal;color:var(--t1);border-bottom:1px solid var(--judge);padd
 }
 
 
-/* ═══ THE HALLMARK — homepage hero ════════════════════════════════
-   The mark is engraved, lit, and set before the ruling lands on it —
+/* ═══ THE HALLMARK · homepage hero ════════════════════════════════
+   The mark is engraved, lit, and set before the ruling lands on it ·
    hallmarking, not decoration. One pass, about two seconds, then still.
    Without JS the whole sequence is CSS; under reduced motion it is
    simply the final state. The nav mark answers once at the end, so the
@@ -959,7 +959,7 @@ em.q{font-style:normal;color:var(--t1);border-bottom:1px solid var(--judge);padd
   .hm-sheen{display:none}
 }
 
-/* deep-link targets for the submit form — land with the form in view */
+/* deep-link targets for the submit form · land with the form in view */
 .submit-panel{position:relative}
 .submit-panel>.anchor{position:absolute;top:0;left:0;width:0;height:0;scroll-margin-top:96px}
 .submit-block.routed .panel{box-shadow:0 0 0 1px var(--route-c,var(--judge)),0 0 60px -24px var(--route-c,var(--judge));transition:box-shadow .6s var(--ease)}
