@@ -1,0 +1,21 @@
+# Runs on every push. Fails if anything private has been committed to a public repo.
+name: Private-content guard
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check tracked files
+        run: |
+          set -e
+          if git ls-files | grep -Ei '(runbook|business-?plan|businessplan|\.env$|/evidence/|/private/)' ; then
+            echo "::error::A file matching the private-content patterns is tracked. This repo is public — remove it."
+            exit 1
+          fi
+          echo "No private-content patterns tracked. Clean."
