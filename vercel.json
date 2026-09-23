@@ -76,6 +76,19 @@
           "value": "inline"
         }
       ]
+    },
+    {
+      "source": "/r/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
     }
   ],
   "redirects": [
@@ -133,6 +146,20 @@
       "source": "/v/MV-2026-0057",
       "destination": "/MV-2026-0057.pdf",
       "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/r/:ref/after",
+      "destination": "/receipt.html"
+    },
+    {
+      "source": "/r/:ref",
+      "destination": "/receipt.html"
+    },
+    {
+      "source": "/r",
+      "destination": "/receipt.html"
     }
   ]
 }

@@ -26,7 +26,7 @@
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<link rel="stylesheet" href="assets/millesimal.css?v=5">
+<link rel="stylesheet" href="assets/millesimal.css?v=7">
 
 <style>
   .doc-layout{display:grid;grid-template-columns:minmax(0,210px) minmax(0,1fr);gap:clamp(30px,4vw,74px);align-items:start}
@@ -79,9 +79,9 @@
     <nav class="nav-links" aria-label="Primary">
       <a class="nav-a" href="standard.html" aria-current="page">The Standard</a>
       <a class="nav-a opt" href="rulings.html">Rulings</a>
-      <a class="nav-a opt" href="independence.html">Independence</a>
+      <a class="nav-a opt" href="adopt.html">For agencies</a>
       <a class="nav-a opt" href="buyers.html">For buyers</a>
-      <a class="btn btn-p btn-sm" href="index.html#start">Submit a meeting</a>
+      <a class="btn btn-p btn-sm" href="index.html#submit-agency" data-route="agency">Get verified</a>
     </nav>
   </div>
   <div class="progress" aria-hidden="true"></div>
@@ -419,6 +419,40 @@
   </div>
 </section>
 
+<!-- ═══ EVIDENCE ANNEX (non-normative) ════════════════════════════ -->
+<section class="pad-y-sm" id="evidence" style="border-bottom:1px solid var(--line-soft)">
+  <div class="shell">
+    <div class="grid g-side" style="align-items:start">
+      <div data-reveal>
+        <span class="eyebrow">Evidence annex · non-normative</span>
+        <h2 style="margin-top:20px;max-width:15ch">The Meeting Receipt.</h2>
+      </div>
+      <div class="stack" data-reveal="100">
+        <p>
+          This annex lists a type of evidence accepted under v1.0. It changes no criterion and carries
+          no version bump, so every citation of v1.0 stays valid.
+        </p>
+        <p class="dim">
+          A Meeting Receipt is the prospect’s own confirmation, given to Millesimal directly at
+          <b>millesimal.uk/r/</b> before the meeting: who they are meeting, that it is a sales
+          conversation, and their role. It is accepted evidence for Criterion 1 (Role, checked
+          externally), Criterion 3 (Awareness) and Criterion 5 (Consent). Its post-meeting
+          confirmation is accepted for Criterion 6 (Attendance).
+        </p>
+        <p class="dim">
+          Criteria 2 (Fit) and 7 (Novelty) are checked against the ICP and suppression list agreed in
+          writing before outreach. Criterion 4 (Need) is still decided on the vendor’s notes and anything
+          the prospect volunteers.
+        </p>
+        <p class="dim">
+          A Receipt is never required. Its absence is never evidence against a meeting, and not
+          answering costs nobody anything.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══ RATING ════════════════════════════════════════════════════ -->
 <section class="pad-y" id="rating">
   <div class="shell">
@@ -479,7 +513,7 @@
           gets written, and the arguments that change it are published alongside it.
         </p>
         <div class="flex-wrap" data-reveal="240" style="margin-top:26px">
-          <a class="btn btn-p" href="index.html#panel-form">Join the v1.1 review panel <span class="arr" aria-hidden="true">→</span></a>
+          <a class="btn btn-p" href="index.html#submit-panel">Join the v1.1 review panel <span class="arr" aria-hidden="true">→</span></a>
           <a class="btn btn-g" href="Millesimal-Adoption-Pack-v1.0.pdf">Adoption pack</a>
         </div>
       </div>
@@ -564,6 +598,6 @@ Where the parties do not agree, either may refer the meeting for independent det
   </div>
 </footer>
 
-<script src="assets/millesimal.js?v=5" defer></script>
+<script src="assets/millesimal.js?v=7" defer></script>
 </body>
 </html>

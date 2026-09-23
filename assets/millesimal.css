@@ -958,3 +958,12 @@ em.q{font-style:normal;color:var(--t1);border-bottom:1px solid var(--judge);padd
   .hm,.hm-line,.hm-fill,.hm-glow,.home .nav .brand-mark{animation:none!important}
   .hm-sheen{display:none}
 }
+
+/* deep-link targets for the submit form — land with the form in view */
+.submit-panel{position:relative}
+.submit-panel>.anchor{position:absolute;top:0;left:0;width:0;height:0;scroll-margin-top:96px}
+.submit-block.routed .panel{box-shadow:0 0 0 1px var(--route-c,var(--judge)),0 0 60px -24px var(--route-c,var(--judge));transition:box-shadow .6s var(--ease)}
+
+/* receipt specimen: criterion numbers lead */
+.ev.rc dt{white-space:nowrap}
+#receipt{border-top:1px solid var(--line-soft)}

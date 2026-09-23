@@ -287,19 +287,56 @@
     });
   });
 
-  /* ── 9. deep-link a preselected route into the form ─────────────── */
+  /* ── 9. route every "submit" link to the form, preselected ─────────
+     #submit-buyer / #submit-agency / #submit-panel (and the legacy
+     #start-*, #ruling-*, #panel-form) select the party, retitle the form
+     for that visitor, scroll it into view and put the cursor in email. */
   var partySelect = $('#party');
-  if (partySelect && location.hash) {
-    var m = location.hash.match(/^#(?:start|ruling)-(buyer|agency|panel)$/);
-    if (m) {
-      partySelect.value = m[1];
-      var target = $('#start');
-      if (target) target.scrollIntoView({ behavior: REDUCED ? 'auto' : 'smooth' });
-    }
+  var block = $('#submit');
+  var COPY = {
+    buyer:  { t: 'Send the meeting you are arguing about.', l: 'The meeting, and which check is in dispute', p: 'Which criterion is in dispute, and what the two of you disagree about.', c: 'Send the meeting', i: 'Tell us the meeting and the check you disagree on. If it is not adjudicable on the evidence available, we will say so rather than take the fee.', col: 'var(--buyer)' },
+    agency: { t: 'Run a founding Diagnostic.', l: 'Your agency, and who you book meetings for', p: 'Roughly how many meetings you book a month, for which kinds of buyer, and whether clients have rejected any recently. Do not send meeting notes yet — we agree how first.', c: 'Request a Diagnostic', i: 'Twenty of last month’s meetings, written notes only. A private report within a week of receiving them. No charge for the first two agencies, and nothing is published.', col: 'var(--agency)' },
+    panel:  { t: 'Ask to join the v1.1 review panel.', l: 'Where you would push back on the Standard', p: 'Your role, and the criterion you think is wrong, unfair or unworkable in your market.', c: 'Ask to join', i: 'Panel members are named and credited, and free to disagree in public. There is no cost and no commitment to adopt the Standard.', col: 'var(--prospect)' },
+    other:  { t: 'Send one meeting, or ask one question.', l: 'The meeting, or the question', p: 'Which criterion is in dispute, and what the two of you disagree about.', c: 'Send it', i: 'Both go to the same inbox and both get a real answer. If a meeting is not adjudicable on the evidence available, we will say so rather than take the fee.', col: 'var(--judge)' }
+  };
+  function setRoute(r) {
+    if (!partySelect || !COPY[r]) return;
+    partySelect.value = r;
+    var k = COPY[r];
+    var t = $('[data-form-title]'), l = $('[data-form-label]'), c = $('[data-form-cta]'), m = $('#msg');
+    if (t) t.textContent = k.t;
+    if (l) l.textContent = k.l;
+    if (c) c.textContent = k.c;
+    if (m) m.placeholder = k.p;
+    var ii = $('[data-form-intro]'); if (ii) ii.textContent = k.i;
+    if (block) { block.style.setProperty('--route-c', k.col); block.classList.add('routed'); }
+  }
+  function fromHash() {
+    var m = location.hash.match(/^#(?:submit|start|ruling)-(buyer|agency|panel)$/);
+    var r = m ? m[1] : (location.hash === '#panel-form' ? 'panel' : (location.hash === '#submit' ? partySelect && partySelect.value : null));
+    if (!r || !block) return;
+    setRoute(r);
+    /* show the form at once (no reveal offset), then scroll to an exact position */
+    $$('[data-reveal]', block).forEach(function (el) { el.style.transition = 'none'; el.classList.add('in'); });
+    var go = function () {
+      var tgt = window.innerWidth <= 1040 ? ($('.submit-panel', block) || block) : block;
+      var y = tgt.getBoundingClientRect().top + (window.scrollY || window.pageYOffset) - 88;
+      window.scrollTo({ top: Math.max(0, y), behavior: REDUCED ? 'auto' : 'smooth' });
+      var e = $('#email');
+      if (e && window.matchMedia('(hover:hover) and (pointer:fine)').matches) setTimeout(function () { e.focus({ preventScroll: true }); }, REDUCED ? 0 : 700);
+    };
+    if (document.readyState === 'complete') requestAnimationFrame(go);
+    else window.addEventListener('load', function () { setTimeout(go, 30); }, { once: true });
+  }
+  if (partySelect) {
+    partySelect.addEventListener('change', function () { setRoute(partySelect.value); });
+    fromHash();
+    window.addEventListener('hashchange', fromHash);
   }
   $$('[data-route]').forEach(function (a) {
     a.addEventListener('click', function () {
-      if (partySelect) partySelect.value = a.getAttribute('data-route');
+      /* same-page link to the hash already in the URL: hashchange will not fire */
+      if (block && a.getAttribute('href') === location.hash) { fromHash(); }
     });
   });
 

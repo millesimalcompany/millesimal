@@ -1,4 +1,6 @@
 User-agent: *
+Disallow: /r/
+Disallow: /receipt.html
 Allow: /
 
 Sitemap: https://millesimal.uk/sitemap.xml

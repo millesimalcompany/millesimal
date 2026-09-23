@@ -35,6 +35,7 @@ required, no licence to accept.
 | `buyers.html` | Buyer route — how the fee works, evidence, and the hard questions |
 | `adopt.html` | Agency route — certification, the rating, and what it costs you |
 | `404.html` | Not-found page |
+| `receipt.html` | The Meeting Receipt, served at `/r/MR-YYYY-NNNNNN` (and `/r/…/after` for attendance). Not indexed |
 | `assets/millesimal.css` | The whole design system, including self-hosted `@font-face` |
 | `assets/millesimal.js` | Motion and interaction — progressive enhancement only |
 | `assets/fonts/` | Quicksand and IBM Plex Mono, self-hosted. No third-party font request |
@@ -133,6 +134,8 @@ files as they are.
 `vercel.json` sets security headers, asset caching, and a set of short redirects:
 `/standard`, `/rulings`, `/pricing` (→ `/buyers.html`), `/adopt`, `/agencies`, and the
 `/v/MV-2026-XXXX` verification paths printed on the specimen rulings.
+It also rewrites `/r/:reference` and `/r/:reference/after` to `receipt.html`, the page a
+prospect opens from the line in an agency's calendar invite.
 
 `.github/workflows/guard.yml` runs on every push and fails the build if anything matching
 the private-content patterns is ever committed. `.github/workflows/pages.yml` is a manual
