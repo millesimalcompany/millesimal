@@ -1,0 +1,26 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# local tooling
+node_modules/
+.cache/
+*.log
+
+# NEVER COMMIT — the repository is public, including its history.
+# Client evidence, real rulings and internal documents live somewhere private.
+/private/
+/evidence/
+/rulings-live/
+*runbook*
+*business-plan*
+*businessplan*
+*.env
+*.env.*
