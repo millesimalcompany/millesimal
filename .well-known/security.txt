@@ -1,0 +1,8 @@
+Contact: mailto:hello@millesimal.uk
+Expires: 2027-09-01T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://millesimal.uk/.well-known/security.txt
+
+# This is a static site. There is no login, no database and no user account.
+# Client evidence and real rulings are never stored in this repository or on
+# this host. If you have found something anyway, please tell us.
