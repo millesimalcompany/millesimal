@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Millesimal — Confirm your meeting</title>
-<meta name="description" content="Confirm a booked meeting with Millesimal, the independent body that records whether sales meetings were what both sides agreed. Thirty seconds.">
+<title>Millesimal | Confirm your meeting</title>
+<meta name="description" content="Confirm a booked meeting with Millesimal, the independent body that records whether sales meetings were what both sides agreed. It takes thirty seconds.">
 <meta name="robots" content="noindex,nofollow">
 <meta name="referrer" content="no-referrer">
 <meta name="theme-color" content="#0B0B0A">
@@ -12,7 +12,7 @@
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<link rel="stylesheet" href="/assets/millesimal.css?v=7">
+<link rel="stylesheet" href="/assets/millesimal.css?v=8">
 <style>
   body{min-height:100svh}
   main.rc-wrap{overflow:hidden;isolation:isolate}
@@ -22,25 +22,25 @@
     background:url("/assets/mark-line.svg") center/contain no-repeat;opacity:.28;
     mask-image:linear-gradient(180deg,#000 10%,transparent 70%);-webkit-mask-image:linear-gradient(180deg,#000 10%,transparent 70%);
   }
-  .rc-ref{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--t3)}
+  .rc-ref{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:var(--t3)}
   .rc-wrap h1{font-size:clamp(32px,6vw,46px);line-height:1.02;margin-top:16px;max-width:14ch}
-  .rc-intro{margin-top:16px;color:var(--t2);font-size:16px;line-height:1.55;max-width:48ch}
+  .rc-intro{margin-top:16px;color:var(--t2);font-size:17px;line-height:1.55;max-width:48ch}
   .rc-wrap .panel{margin-top:26px}
   .q-n{font-family:"IBM Plex Mono",monospace;color:var(--judge);margin-right:8px}
-  .field .hint{display:block;font-family:inherit;text-transform:none;letter-spacing:0;font-size:13px;color:var(--t4);margin-top:5px}
+  .field .hint{display:block;font-family:inherit;text-transform:none;letter-spacing:0;font-size:14.5px;color:var(--t4);margin-top:5px}
   .choices{display:flex;flex-wrap:wrap;gap:8px;margin-top:9px}
   .choices label{position:relative;cursor:pointer;margin:0;font:inherit;text-transform:none;letter-spacing:0}
   .choices input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
-  .choices span{display:inline-block;padding:11px 15px;border:1px solid var(--line-hard);border-radius:3px;font-size:14.5px;color:var(--t2);
+  .choices span{display:inline-block;padding:11px 15px;border:1px solid var(--line-hard);border-radius:3px;font-size:16px;color:var(--t2);
     transition:border-color .2s var(--ease),background .2s var(--ease),color .2s var(--ease)}
   .choices input:checked+span{border-color:var(--judge);background:var(--judge-dim);color:var(--t1)}
   .choices input:focus-visible+span{outline:2px solid var(--judge);outline-offset:2px}
-  .rc-small{font-size:13px;line-height:1.55;color:var(--t4);margin-top:18px}
-  .rc-foot{margin-top:28px;font-size:13px;color:var(--t4);line-height:1.6}
+  .rc-small{font-size:14.5px;line-height:1.55;color:var(--t4);margin-top:18px}
+  .rc-foot{margin-top:28px;font-size:14.5px;color:var(--t4);line-height:1.6}
   .rc-foot a{color:var(--t3);border-bottom:1px solid var(--line-hard)}
-  .rc-wrap .field>label,.rc-wrap .field>legend{display:block;font-family:inherit;font-size:15.5px;letter-spacing:-.005em;
+  .rc-wrap .field>label,.rc-wrap .field>legend{display:block;font-family:inherit;font-size:17px;letter-spacing:-.005em;
     text-transform:none;color:var(--t1);line-height:1.4;margin-bottom:9px;padding:0;font-weight:500}
-  #rc-ref-field>label{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--t3);font-weight:400}
+  #rc-ref-field>label{font-family:"IBM Plex Mono",monospace;font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--t3);font-weight:400}
   .rc-wrap .field{margin-top:22px}
   [hidden]{display:none!important}
 </style>
@@ -64,9 +64,8 @@
   <section id="rc-before">
     <h1>Confirm your meeting.</h1>
     <p class="rc-intro">
-      Millesimal is an independent body that records whether booked sales meetings were what both
-      sides agreed. We sell nothing to you and will not contact you again about this meeting.
-      It takes about thirty seconds.
+      Millesimal independently records whether sales meetings were what both sides agreed. We sell
+      you nothing and will not contact you again. It takes about thirty seconds.
     </p>
 
     <div class="panel">
@@ -81,7 +80,7 @@
         <div class="field" id="rc-ref-field" hidden>
           <label for="rc-ref-in">Your meeting reference</label>
           <input id="rc-ref-in" type="text" inputmode="text" autocomplete="off" placeholder="MR-2026-000123" pattern="MR-\d{4}-\d{6}">
-          <span class="hint">It is in the line of your calendar invite that mentions Millesimal.</span>
+          <span class="hint">It is on the line of your calendar invite that mentions Millesimal.</span>
         </div>
 
         <div class="field">
@@ -120,22 +119,22 @@
         <div class="field">
           <label for="rc-email"><span class="q-n">5</span>Your work email</label>
           <input id="rc-email" name="email" type="email" required autocomplete="email" placeholder="you@company.com">
-          <span class="hint">So we can send you a copy of what you confirmed.</span>
+          <span class="hint">So we can send you a copy.</span>
         </div>
 
         <div style="margin-top:22px">
           <button class="btn btn-p" type="submit" style="width:100%">Confirm the meeting <span class="arr" aria-hidden="true">→</span></button>
         </div>
         <p class="form-note">
-          Your answers go to both sides exactly as you give them. Your email is used to send you a copy
-          and to check this meeting against the list of companies the seller already works with. It is
-          not given to either side, and you will not be contacted about anything else.
+          Both sides see your answers exactly as given. Your email is used only to send your copy
+          and to check it against the seller’s existing client list. Neither side gets it.
+          We will not contact you about anything else.
         </p>
       </form>
       <div class="form-ok">
         <b>Confirmed. Thank you.</b>
-        <p>A copy of your answers will be sent to the address you gave. If you did not fill this in,
-          reply “not me” to that email and the receipt is voided.</p>
+        <p>We will email you a copy. If this was not you, reply “not me” to that email and we will void
+          the receipt.</p>
       </div>
     </div>
 
@@ -147,11 +146,11 @@
   <!-- ── AFTER THE MEETING ──────────────────────────────────────── -->
   <section id="rc-after" hidden>
     <h1>Did the meeting happen?</h1>
-    <p class="rc-intro">Two taps. It tells both sides, independently, whether the meeting took place.</p>
+    <p class="rc-intro">Two taps. Both sides get an independent record of whether it took place.</p>
     <div class="panel">
       <form id="rc-form-after" action="https://formspree.io/f/xaeybbql" method="POST" data-async>
         <input type="hidden" name="form_type" value="receipt-after">
-        <input type="hidden" name="_subject" value="Meeting receipt — attendance">
+        <input type="hidden" name="_subject" value="Meeting receipt · attendance">
         <input type="hidden" name="reference" value="">
         <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
         <fieldset class="field" style="border:0;padding:0;margin-top:0">
@@ -164,7 +163,7 @@
         <div style="margin-top:22px">
           <button class="btn btn-p" type="submit" style="width:100%">Send <span class="arr" aria-hidden="true">→</span></button>
         </div>
-        <p class="form-note">Nothing else is asked, and nothing else will be sent.</p>
+        <p class="form-note">Nothing else will be asked or sent.</p>
       </form>
       <div class="form-ok">
         <b>Recorded. Thank you.</b>
@@ -174,8 +173,8 @@
   </section>
 
   <p class="rc-foot">
-    Why this exists: when a company pays for a sales meeting, the only record of it is usually written
-    by someone paid for the answer. Your confirmation is the one piece of evidence nobody has a stake in.
+    Why this exists: a paid sales meeting is usually recorded only by someone paid for the answer.
+    Yours is the one record from someone with no stake.
     <a href="/standard.html#evidence">How it is used</a>.
   </p>
 
@@ -221,7 +220,7 @@
   if (after && REF.test(ref)) {
     document.getElementById('rc-before').hidden = true;
     document.getElementById('rc-after').hidden = false;
-    document.title = 'Millesimal — Did the meeting happen?';
+    document.title = 'Millesimal | Did the meeting happen?';
   }
 
   /* one-way hash of the email, for suppression-list matching */
@@ -238,6 +237,6 @@
   email.addEventListener('change', hash);
 })();
 </script>
-<script src="/assets/millesimal.js?v=7" defer></script>
+<script src="/assets/millesimal.js?v=8" defer></script>
 </body>
 </html>

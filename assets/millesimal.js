@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════════════
-   MILLESIMAL — motion & interaction
+   MILLESIMAL · motion and interaction
    Progressive enhancement only. Every element resolves to its final
    state if JS never runs, and again if prefers-reduced-motion is set.
    ═══════════════════════════════════════════════════════════════════════ */
@@ -135,30 +135,30 @@
     document.body.removeChild(ta);
   }
 
-  /* ── 6. the seven checks — live verdict machine ─────────────────── */
+  /* ── 6. the seven checks: live verdict machine ─────────────────── */
   var machine = $('#checks-machine');
   if (machine) {
     var CRITERIA = [
       { n: 'Role', plain: 'Right person',
-        why: 'The attendee holds a role with documented authority, or direct functional responsibility, in the category being sold into. Assessed on the role, never on what the person claims about budget.',
+        why: 'The attendee has documented authority, or direct responsibility, for what is being sold. We check the role itself, never what the person says about budget.',
         cite: 'Standard v1.0 · criterion 1' },
       { n: 'Fit', plain: 'Right company',
-        why: 'The account matches the Ideal Customer Profile agreed in writing before outreach began. An ICP cannot be widened after the fact, and "close enough" is not a finding.',
+        why: 'The company matches the customer profile agreed in writing before outreach began. The profile cannot be widened afterwards, and "close enough" does not count.',
         cite: 'Standard v1.0 · criterion 2' },
       { n: 'Awareness', plain: 'They knew who they were meeting',
-        why: 'The attendee could state, in their own words, what the vendor does — before or at the start of the meeting. Recognition, not approval.',
+        why: 'Before or at the start of the meeting, the attendee could say in their own words what the vendor does. They need to know it, not like it.',
         cite: 'Standard v1.0 · criterion 3' },
       { n: 'Need', plain: 'They said it themselves',
-        why: 'The attendee described a problem or situation inside the vendor’s solution space. It need not be urgent or funded. It must be real, relevant, and in their own framing.',
+        why: 'The attendee described a real problem the vendor can help with, in their own words. It does not need to be urgent or funded.',
         cite: 'Standard v1.0 · criterion 4' },
       { n: 'Consent', plain: 'They agreed to a sales call',
-        why: 'The attendee knowingly agreed to a commercial conversation with this vendor. Gift cards, research framings and mistaken identity all fail here. This criterion protects the buyer’s brand, not only the invoice.',
+        why: 'The attendee knowingly agreed to a sales conversation with this vendor. Gift cards, fake research calls and mistaken identity all fail. This protects the buyer’s reputation as well as the invoice.',
         cite: 'Standard v1.0 · criterion 5' },
       { n: 'Attendance', plain: 'They turned up',
-        why: 'The meeting happened, with the qualifying attendee present, for long enough to hold a real conversation. Two reschedules are permitted; a third voids the meeting either way.',
+        why: 'The meeting happened, the right person was there, and it lasted long enough for a real conversation. Two reschedules are allowed. A third cancels the meeting.',
         cite: 'Standard v1.0 · criterion 6' },
       { n: 'Novelty', plain: 'New to the buyer',
-        why: 'The account was not in the buyer’s active pipeline and was not on the suppression list supplied at campaign start. A buyer who supplies no list waives this objection.',
+        why: 'The company was not already in the buyer’s pipeline or on the exclusion list supplied at the start. A buyer who supplied no list cannot object on this ground.',
         cite: 'Standard v1.0 · criterion 7' }
     ];
 
@@ -187,11 +187,11 @@
       big.className = 'verdict-big ' + (ok ? 'ok' : 'no');
 
       if (ok) {
-        sub.textContent = 'All seven criteria met. The meeting counts, the fee stands, and the agency’s cleared count rises by one.';
+        sub.textContent = 'All seven criteria met. The meeting counts, the fee stands, and the agency’s count of cleared meetings goes up by one.';
       } else if (failed.length === 1) {
-        sub.textContent = 'Fails on ' + CRITERIA[failed[0]].n + '. Six of seven is not a qualified meeting — it is an unqualified meeting with a good excuse. The record names the criterion, because "failed on Fit" and "failed on Consent" say very different things about an agency.';
+        sub.textContent = 'Fails on ' + CRITERIA[failed[0]].n + '. Six out of seven does not qualify. The record names the criterion, because failing on Fit and failing on Consent say very different things about an agency.';
       } else {
-        sub.textContent = 'Fails on ' + failed.map(function (i) { return CRITERIA[i].n; }).join(', ') + '. Each criterion is decided separately, so the record shows every one that failed rather than a single grade.';
+        sub.textContent = 'Fails on ' + failed.map(function (i) { return CRITERIA[i].n; }).join(', ') + '. Each criterion is decided on its own, so the record shows every one that failed.';
       }
 
       cells.forEach(function (c, i) {
@@ -209,7 +209,7 @@
 
       var idx = (typeof focusIdx === 'number') ? focusIdx : (failed.length ? failed[0] : 0);
       var c = CRITERIA[idx];
-      dTitle.textContent = (idx + 1) + '. ' + c.n + ' — ' + c.plain;
+      dTitle.textContent = (idx + 1) + '. ' + c.n + ': ' + c.plain;
       dBody.textContent = c.why;
       dCite.textContent = c.cite;
     }
@@ -294,10 +294,10 @@
   var partySelect = $('#party');
   var block = $('#submit');
   var COPY = {
-    buyer:  { t: 'Send the meeting you are arguing about.', l: 'The meeting, and which check is in dispute', p: 'Which criterion is in dispute, and what the two of you disagree about.', c: 'Send the meeting', i: 'Tell us the meeting and the check you disagree on. If it is not adjudicable on the evidence available, we will say so rather than take the fee.', col: 'var(--buyer)' },
-    agency: { t: 'Run a founding Diagnostic.', l: 'Your agency, and who you book meetings for', p: 'Roughly how many meetings you book a month, for which kinds of buyer, and whether clients have rejected any recently. Do not send meeting notes yet — we agree how first.', c: 'Request a Diagnostic', i: 'Twenty of last month’s meetings, written notes only. A private report within a week of receiving them. No charge for the first two agencies, and nothing is published.', col: 'var(--agency)' },
-    panel:  { t: 'Ask to join the v1.1 review panel.', l: 'Where you would push back on the Standard', p: 'Your role, and the criterion you think is wrong, unfair or unworkable in your market.', c: 'Ask to join', i: 'Panel members are named and credited, and free to disagree in public. There is no cost and no commitment to adopt the Standard.', col: 'var(--prospect)' },
-    other:  { t: 'Send one meeting, or ask one question.', l: 'The meeting, or the question', p: 'Which criterion is in dispute, and what the two of you disagree about.', c: 'Send it', i: 'Both go to the same inbox and both get a real answer. If a meeting is not adjudicable on the evidence available, we will say so rather than take the fee.', col: 'var(--judge)' }
+    buyer:  { t: 'Send the meeting you are arguing about.', l: 'The meeting, and which check is in dispute', p: 'Which criterion is in dispute, and what the two of you disagree about.', c: 'Send the meeting', i: 'Tell us about the meeting and the criterion you disagree on. If the evidence is not enough to decide, we will tell you and not charge.', col: 'var(--buyer)' },
+    agency: { t: 'Run a founding Diagnostic.', l: 'Your agency, and who you book meetings for', p: 'Roughly how many meetings you book a month, for which kinds of buyer, and whether clients have rejected any recently. Please do not send meeting notes yet. We will agree how first.', c: 'Request a Diagnostic', i: 'Send 20 of last month’s meetings as written notes. You get a private report within a week. It is free for the first two agencies, and nothing is published.', col: 'var(--agency)' },
+    panel:  { t: 'Ask to join the v1.1 review panel.', l: 'Where you would push back on the Standard', p: 'Your role, and the criterion you think is wrong, unfair or unworkable in your market.', c: 'Ask to join', i: 'Panel members are named, credited and free to disagree in public. It costs nothing, and you do not have to adopt the Standard.', col: 'var(--prospect)' },
+    other:  { t: 'Send one meeting, or ask one question.', l: 'The meeting, or the question', p: 'Which criterion is in dispute, and what the two of you disagree about.', c: 'Send it', i: 'Everything goes to one inbox and gets a reply from a person. If the evidence is not enough to decide, we will tell you and not charge.', col: 'var(--judge)' }
   };
   function setRoute(r) {
     if (!partySelect || !COPY[r]) return;
